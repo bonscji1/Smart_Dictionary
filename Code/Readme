@@ -1,0 +1,9 @@
+Install tesseract-ocr in linux
+pip3 install pytesseract,tesseract, opencv-python
+
+
+2***********
+pip3 install torch torchvision torchaudio
+pip3 install easyocr
+pip3 install matplotlib
+pip install jupyter notebook

@@ -1,16 +1,55 @@
-# This is a sample Python script.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import cv2
+import easyocr
+import pytesseract
 
 
-# Press the green button in the gutter to run the script.
+
+
+
+def mainEasyOCR():
+    # downloads packages, takes a while on the first run
+    #reader = easyocr.Reader(['en', 'cs', 'es'])
+    reader = easyocr.Reader(['en'])
+
+    # read image
+    img = cv2.imread('Images/Test.jpg')
+
+    output = reader.readtext(img, detail=1)  # detail 0 for simple output, 1 for expanded
+
+    # options
+    # width_ths (float, default = 0.5) - Maximum horizontal distance to merge boxes.
+
+    print('\n')
+    print(output)
+
+def mainTessaract():
+    # read image
+    #img = cv2.imread('Images/Test.jpg')
+    img = cv2.imread('Images/page1.jpg')
+
+
+    # pre-process
+    imageShape = img.shape
+
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    blur = cv2.GaussianBlur(gray, (3, 3), 0)
+
+
+
+    # configurations
+    #config = ('-l eng --oem 1 --psm 3')
+    config = ('-l spa+ces --oem 1 --psm 3')
+
+    text = pytesseract.image_to_string(blur, config=config)
+
+     # print results
+    #text = text.split('\n')
+    print(text)
+
+
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    mainTessaract()
