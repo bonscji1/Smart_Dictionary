@@ -5,7 +5,15 @@ import pytesseract
 
 
 
+def preprocess(img):
+    # pre-process
+    imageShape = img.shape
 
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    blur = cv2.GaussianBlur(gray, (3, 3), 0)
+
+    return blur
 
 def mainEasyOCR():
     # downloads packages, takes a while on the first run
@@ -24,32 +32,56 @@ def mainEasyOCR():
     print(output)
 
 def mainTessaract():
-    # read image
-    #img = cv2.imread('Images/Test.jpg')
-    img = cv2.imread('Images/page1.jpg')
-
-
-    # pre-process
-    imageShape = img.shape
-
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-    blur = cv2.GaussianBlur(gray, (3, 3), 0)
-
-
-
     # configurations
-    #config = ('-l eng --oem 1 --psm 3')
     config = ('-l spa+ces --oem 1 --psm 3')
 
-    text = pytesseract.image_to_string(blur, config=config)
+    #read image
+    img = cv2.imread('Images/page1_v2.jpg')
+    pimg = preprocess(img)
+
+    #preprocess
+    pimg = preprocess(img)
+
+
+    text = pytesseract.image_to_string(pimg, config=config)
 
      # print results
     #text = text.split('\n')
     print(text)
 
 
+def testingTessaract():
+    # Testing
+    # configurations
+    config = ('-l eng --oem 1 --psm 3')
+
+
+    # read image
+    img0 = cv2.imread('Images/Test.jpg')
+    img1 = cv2.imread('Images/test_1.png')
+    img2 = cv2.imread('Images/test_2.png')
+
+    pimg0 = preprocess(img0)
+    pimg1 = preprocess(img1)
+    pimg2 = preprocess(img2)
+
+    text0 = pytesseract.image_to_string(pimg0, config=config)
+    text1 = pytesseract.image_to_string(pimg1, config=config)
+    text2 = pytesseract.image_to_string(pimg2, config=config)
+
+    # print results
+    # text = text.split('\n')
+    print(text0)
+    print("----------******************************-------------")
+    print(text1)
+    print("----------******************************-------------")
+    print(text2)
+
+
 
 
 if __name__ == '__main__':
-    mainTessaract()
+    #mainTessaract()
+    #mainEasyOCR()
+
+    testingTessaract()
