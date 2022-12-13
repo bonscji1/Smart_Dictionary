@@ -4,7 +4,6 @@ import easyocr
 import pytesseract
 
 
-
 def preprocess(img):
     # pre-process
     imageShape = img.shape
@@ -83,5 +82,6 @@ def testingTessaract():
 if __name__ == '__main__':
     #mainTessaract()
     #mainEasyOCR()
+    mainKeras()
 
-    testingTessaract()
+    #testingTessaract()
