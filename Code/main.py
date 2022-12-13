@@ -1,4 +1,3 @@
-
 import cv2
 import easyocr
 import pytesseract
@@ -14,9 +13,15 @@ def preprocess(img):
 
     return blur
 
-def mainEasyOCR():
+
+def print_output(text):
+    print(text)
+    print("----------******************************-------------")
+
+
+def main_easy_ocr():
     # downloads packages, takes a while on the first run
-    #reader = easyocr.Reader(['en', 'cs', 'es'])
+    # reader = easyocr.Reader(['en', 'cs', 'es'])
     reader = easyocr.Reader(['en'])
 
     # read image
@@ -30,30 +35,28 @@ def mainEasyOCR():
     print('\n')
     print(output)
 
-def mainTessaract():
+
+def main_tesseract():
     # configurations
     config = ('-l spa+ces --oem 1 --psm 3')
 
-    #read image
+    # read image
     img = cv2.imread('Images/page1_v2.jpg')
     pimg = preprocess(img)
 
-    #preprocess
+    # preprocess
     pimg = preprocess(img)
-
 
     text = pytesseract.image_to_string(pimg, config=config)
 
-     # print results
-    #text = text.split('\n')
+    # print results
+    # text = text.split('\n')
     print(text)
 
 
-def testingTessaract():
-    # Testing
+def testing_tesseract():
     # configurations
     config = ('-l eng --oem 1 --psm 3')
-
 
     # read image
     img0 = cv2.imread('Images/Test.jpg')
@@ -68,20 +71,30 @@ def testingTessaract():
     text1 = pytesseract.image_to_string(pimg1, config=config)
     text2 = pytesseract.image_to_string(pimg2, config=config)
 
-    # print results
-    # text = text.split('\n')
-    print(text0)
-    print("----------******************************-------------")
-    print(text1)
-    print("----------******************************-------------")
-    print(text2)
+    print("Tesseract output:")
+    print_output(text0)
+    # print_output(text1)
+    # print_output(text2)
 
 
+def testing_easy_ocr():
+    reader = easyocr.Reader(['en'])
+
+    # read image
+    img0 = cv2.imread('Images/Test.jpg')
+
+    output = reader.readtext(img0, detail=0)  # detail 0 for simple output, 1 for expanded
+
+    # options
+    # width_ths (float, default = 0.5) - Maximum horizontal distance to merge boxes.
+
+    print("EasyOCR output:")
+    print_output(output)
 
 
 if __name__ == '__main__':
-    #mainTessaract()
-    #mainEasyOCR()
-    mainKeras()
+    # main_tesseract()
+    # main_easy_ocr()
 
-    #testingTessaract()
+    # testing_tesseract()
+    testing_easy_ocr()
