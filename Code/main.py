@@ -21,19 +21,18 @@ def print_output(text):
 
 def main_easy_ocr():
     # downloads packages, takes a while on the first run
-    # reader = easyocr.Reader(['en', 'cs', 'es'])
-    reader = easyocr.Reader(['en'])
+    reader = easyocr.Reader(['cs', 'es'])
 
     # read image
-    img = cv2.imread('Images/Test.jpg')
+    img = cv2.imread('Images/page1.jpg')
 
-    output = reader.readtext(img, detail=1)  # detail 0 for simple output, 1 for expanded
+    output = reader.readtext(img, detail=0)  # detail 0 for simple output, 1 for expanded
 
     # options
     # width_ths (float, default = 0.5) - Maximum horizontal distance to merge boxes.
 
-    print('\n')
-    print(output)
+    print("EasyOCR output:")
+    print_output(output)
 
 
 def main_tesseract():
@@ -41,8 +40,7 @@ def main_tesseract():
     config = ('-l spa+ces --oem 1 --psm 3')
 
     # read image
-    img = cv2.imread('Images/page1_v2.jpg')
-    pimg = preprocess(img)
+    img = cv2.imread('Images/page1.jpg')
 
     # preprocess
     pimg = preprocess(img)
@@ -50,8 +48,8 @@ def main_tesseract():
     text = pytesseract.image_to_string(pimg, config=config)
 
     # print results
-    # text = text.split('\n')
-    print(text)
+    print("Tesseract output:")
+    print_output(text)
 
 
 def testing_tesseract():
@@ -93,8 +91,8 @@ def testing_easy_ocr():
 
 
 if __name__ == '__main__':
-    # main_tesseract()
-    # main_easy_ocr()
+    main_tesseract()
+    main_easy_ocr()
 
     # testing_tesseract()
-    testing_easy_ocr()
+    #testing_easy_ocr()
