@@ -103,21 +103,162 @@ def testing_tesseract():
     print_output(text3)
 
 
+def comparative_print(test_name, text_tes, text_eocr):
+    print(test_name + '\n')
+    print("Tesseract output:")
+    print_output(text_tes)
+    print("EasyOCR output:")
+    print_output(text_eocr)
 
 def comparative_testing():
-    # set testing image
+    # set testing image 1
     img = cv2.imread('Images/Test.jpg')
+
+    # set testing configurations
+    config_tes = '-l spa+ces --oem 1 --psm 3'
+    config_eocr = ['en']
+
+    #ocr
+    text_tes = test_tesseract(img, config_tes)
+    text_eocr = test_easy_ocr(img, config_eocr)
+
+    #print output
+    comparative_print("Default testing image", text_tes, text_eocr)
+
+    # ******************************************************************
+
+    # set testing image 2 -> second testing image
+    img = cv2.imread('Images/Test.jpg')
+
+    # set testing configurations
+    config_tes = '-l eng --oem 1 --psm 3'
+    config_eocr = ['en']
+
+    # ocr
+    text_tes = test_tesseract(img, config_tes)
+    text_eocr = test_easy_ocr(img, config_eocr)
+
+    # print output
+    comparative_print("Default testing image 2", text_tes, text_eocr)
+
+    # ******************************************************************
+
+    # set testing image 2 -> second testing image with added language
+    img = cv2.imread('Images/Test.jpg')
+
+    # set testing configurations
+    config_tes = '-l spa+eng --oem 1 --psm 3'
+    config_eocr = ['en', 'es']
+
+    # ocr
+    text_tes = test_tesseract(img, config_tes)
+    text_eocr = test_easy_ocr(img, config_eocr)
+
+    # print output
+    comparative_print("Default testing image 2 with 2 languages", text_tes, text_eocr)
+
+    # ******************************************************************
+
+    # set testing image 3 -> testing for procedurally smaller text
+    img = cv2.imread('Images/Test.jpg')
+
+    # set testing configurations
+    config_tes = '-l eng --oem 1 --psm 3'
+    config_eocr = ['en']
+
+    # ocr
+    text_tes = test_tesseract(img, config_tes)
+    text_eocr = test_easy_ocr(img, config_eocr)
+
+    # print output
+    comparative_print("Procedurally smaller text", text_tes, text_eocr)
+
+    # ******************************************************************
+
+    # set testing image 4 -> small try on real data blurry
+    img = cv2.imread('Images/page_test.jpg')
 
     # set testing configurations
     config_tes = '-l spa+ces --oem 1 --psm 3'
     config_eocr = ['cs', 'es']
 
+    # ocr
+    text_tes = test_tesseract(img, config_tes)
+    text_eocr = test_easy_ocr(img, config_eocr)
+
+    # print output
+    comparative_print("Default testing image", text_tes, text_eocr)
+
+    # ******************************************************************
+
+    # set testing image 5 -> small try on real data v2
+    img = cv2.imread('Images/page_test_2.jpg')
+
+    # set testing configurations
+    config_tes = '-l spa+ces --oem 1 --psm 3'
+    config_eocr = ['cs', 'es']
+
+    # ocr
+    text_tes = test_tesseract(img, config_tes)
+    text_eocr = test_easy_ocr(img, config_eocr)
+
+    # print output
+    comparative_print("Default testing image", text_tes, text_eocr)
+
+    # ******************************************************************
+
+    # set testing image 5 -> small try on real data v2, sigle language
+    img = cv2.imread('Images/page_test_2.jpg')
+
+    # set testing configurations
+    config_tes = '-l ces --oem 1 --psm 3'
+    config_eocr = ['cs']
+
+    # ocr
+    text_tes = test_tesseract(img, config_tes)
+    text_eocr = test_easy_ocr(img, config_eocr)
+
+    # print output
+    comparative_print("Default testing image", text_tes, text_eocr)
+
+    # ******************************************************************
+    # set testing image 6 -> real data
+    img = cv2.imread('Images/page1.jpg')
+
+    # set testing configurations
+    config_tes = '-l spa+ces --oem 1 --psm 3'
+    config_eocr = ['cs', 'es']
+
+    # ocr
+    text_tes = test_tesseract(img, config_tes)
+    text_eocr = test_easy_ocr(img, config_eocr)
+
+    # print output
+    comparative_print("Default testing image", text_tes, text_eocr)
+
+    # ******************************************************************
+
+    # set testing image 7 -> real data v2
+    img = cv2.imread('Images/page1_v2.jpg')
+
+    # set testing configurations
+    config_tes = '-l spa+ces --oem 1 --psm 3'
+    config_eocr = ['cs', 'es']
+
+    # ocr
+    text_tes = test_tesseract(img, config_tes)
+    text_eocr = test_easy_ocr(img, config_eocr)
+
+    # print output
+    comparative_print("Real data adjusted for smaller image size", text_tes, text_eocr)
 
 
 
 if __name__ == '__main__':
-    main_tesseract()
-    main_easy_ocr()
+    # main_tesseract()
+    # main_easy_ocr()
 
     # testing_tesseract()
     # testing_easy_ocr()
+
+    comparative_testing()
