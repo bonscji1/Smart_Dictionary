@@ -110,6 +110,7 @@ def comparative_print(test_name, text_tes, text_eocr):
     print("EasyOCR output:")
     print_output(text_eocr)
 
+
 def comparative_testing():
     # set testing image 1
     img = cv2.imread('Images/Test.jpg')
@@ -187,7 +188,7 @@ def comparative_testing():
     text_eocr = test_easy_ocr(img, config_eocr)
 
     # print output
-    comparative_print("Default testing image", text_tes, text_eocr)
+    comparative_print("small real data blurry", text_tes, text_eocr)
 
     # ******************************************************************
 
@@ -203,7 +204,7 @@ def comparative_testing():
     text_eocr = test_easy_ocr(img, config_eocr)
 
     # print output
-    comparative_print("Default testing image", text_tes, text_eocr)
+    comparative_print("small real data", text_tes, text_eocr)
 
     # ******************************************************************
 
@@ -219,7 +220,7 @@ def comparative_testing():
     text_eocr = test_easy_ocr(img, config_eocr)
 
     # print output
-    comparative_print("Default testing image", text_tes, text_eocr)
+    comparative_print("small real data only 1 language", text_tes, text_eocr)
 
     # ******************************************************************
     # set testing image 6 -> real data
@@ -234,7 +235,7 @@ def comparative_testing():
     text_eocr = test_easy_ocr(img, config_eocr)
 
     # print output
-    comparative_print("Default testing image", text_tes, text_eocr)
+    comparative_print("Real data", text_tes, text_eocr)
 
     # ******************************************************************
 
