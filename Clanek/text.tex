@@ -214,29 +214,40 @@ V předchozím textu již byly identifikovány hlavní kroky nutné pro vyřeše
 Prvním krokem je převést ručně psaný text ve slovníkové podobě, tedy \textit{španělské slovo} - \textit{český význam}, do digitální podoby za pomoci \ac{OCR}.
 Dalším krokem je uložení takto získané digitální podoby slovníkového záznamu do databázového systému, specificky PostgreSQL.\cite{postgre}
 Pokud tento záznam již existuje, je nutné změnit jeho prioritu naučení.
-Tento záznam jsme se v minulosti nenaučili a je tedy nutné mu v do budoucna věnovat větší pozornost při studiu.
+Tento záznam jsme se v minulosti nenaučili a je tedy nutné mu do budoucna věnovat větší pozornost při studiu.
+Pro následné studium, například pomocí pomodoro techniky, je také dobré zachvávat datum, kdy byl záznam vytvořen.
 
 
 \section{IMPLEMENTATION / IMPLEMENTACE ŘEŠENÍ}
 
-\subsection{Popis řešení}
-jak k tomu budu přistupovat
-co jsem dělal
-jak jsem to dělal
-
+\subsection{Popis Implementace}
+Pro implementaci \ac{OCR} byly vybrány 2 hlavní technologie, Tesseract\cite{tesseract} a EasyOCR\cite{easy_ocr}.
+Dále byla pro komparaci vybrána technologie digitalizace Pen to Print\cite{pen_to_print}.
+Tato technologie není na rozdíl od technologií Tesseract a EasyOCR využitelná pro praktické provedení řešení, je to však placená technologie specificky vyvinutá a prodávaná pro převod ručně psaného textu do digitální formy. Je tedy vhodná jako benchmark pro komparaci vytvořeného řešení.
 
 \subsubsection{Tesseract}
-hlavní
+Tessetact je \ac{OCR} řešení původně vyvíjené v Hewlett-packard laboratořích v roce 1985, později vydané jako \textit{open-source} v roce 2005 a dále jeho vývoj převzal Google od roku 2006.
+Je zřejmé, že toto řešení má bohatou historii a je možná nejznámější \ac{OCR} engine.
+V současné době je tento projekt ve verzi 5, v základní verzi podporuje více jak 100 jazyků, je schopný zpracovávat několik typů vstupních obrázků a díky své komunitě na něj existuje mnoho nástavem pro specifická řešení.
+V této práci bude Tesseract využíván pomocí python wrappru zvaného \textit{PyTesseract}.
 
 \subsubsection{EasyOCR}
-hlavní
+EasyOCR je \textit{open-source} python modul pro extrakci textu z obrázků, schopné zpracovat přirozený i zhuštěný text v dokumentech.
+EasyOCR v době psaní  podporoje přes 80 jazyků s cílem další expanze.
+Dalším milníkem tohoto projektu je, dle oficiální github stránky, zpracování ručně psaného textu, v následujícím textu je popsána současná situace týkající se tohoto milníku.\cite{easy_ocr}
 
 \subsubsection{Pen to Print}
+
 kontrola
 
 \subsection{Omezení/nevytvořitelnost}
+co jsem dělal, proč to nejde
 proč to nejde
 kde to selhává
+
+\subsection{Opuštění dalších částí řešení}
+není nutné dělat další části řešení, pokud nefunguje ani první krok,
+více prozkoumat limitace prvního kroku
 
 
 \subsection{OBSAH}
