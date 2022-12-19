@@ -170,15 +170,79 @@ Je tedy nutné vytvořit nový způsob, kde budou tyto faktory pod kontrolou a p
 
 \section{NEW SOLUTION / NOVÉ ŘEŠENÍ}
 
-\subsection{OBSAH}
-V této kapitole je třeba přesně popsat nový způsob řešení a to včetně nutné teorie, která s tím souvisí. 
+\subsection{Teoretické zpracování problematiky}
+Jak již bylo zmíněno v předchozí sekci, průzkum tématiky zcela jasně vede k využití technologie \ac{OCR} pro digitalizaci textu.
+\ac{OCR} je process který převádí obrázek, na kterém se nachází text, do textu zpracovatelného strojem.
+Hlavním využitím této technologie je digitalizace dokumentů pro další zpracování. V dnešní době je snadné vytvořit scan legálně platné smlouvy smlouvy nebo vyúčtování, což je vhodné pro dlouhodobé skladování at již z pohledu zachovatelnosti nebo zabraného místa.
+Takto naskenované dokumenty se v budoucnu velmi těžko zpracovávají, proto je výhodné provézt převod do klasické textové podoby pokud s takovýmto dokumentem chceme v budoucnu nadále pracovat. Další výhodou je taky možnost vyhledávání v textu, která je stále rychlejší a přesnější než vyhledávání na obrázcích.\cite{amazon_ocr}
+
+\subsubsection{metodika OCR}
+Ve většině případů můžeme ve zpracování dat pomocí \ac{OCR} identifikovat několik základních kroků.\cite{amazon_ocr}
+
+\begin{itemize}
+ \item Zisk obrázku
+ \item Předzpracování obrázku
+ \item Rozpoznání textu
+ \item Následné zpracování
+\end{itemize}
+
+\paragraph{Zisk obrázku}
+Pro \ac{OCR} potřebujeme obrázek s rozeznatelným textem, který nejčastěji získáme vyfocením nebo lépe naskenováním požadovaných dat.
+
+\paragraph{Předzpracování}
+Obrázek si systém předzpracovává z důvodu vyčištěí a odstranění nejčastějších chyb obrazu.
+Tento krok je dlůežitý jelikož vede ke zvýšení přesnosti \ac{OCR}.
+Mezi nejčastější úkony předzpracování jsou změny náklonu, začištování hran nebo vyčištění nežádoucích obrazců, boxů a linií.
+
+\paragraph{Rozpoznání textu}
+Samotný algoritmus \ac{OCR} může být 2 typů, \textit {Pattern matching} nebo \textit{Feature extraction}.
+\textit{Pattern matching} funguje izolováním jednotlivých charakterů textu a nasledným porovnáváním tohoto charakteru s vnitřní databází charakterů. Tento systém funguje pouze tehdy, pokud s požadovanou přesností dokáže k izolovanému charakteru najít ve vnitřní databázi skupinu, do které zapadá a tak určit, o který charakter se jedná.
+
+\textit{Feature extraction} pokračuje v rozkládání izolovaných charakterů na jednotlivé linie a tahy daného charakteru. Dalším krokem tohoto postupu je opět komparace s interní databází pro nalezení nejbližší schody s interním charakterem, který je výslekdem klasifikace.
+
+\paragraph{Následné zpracování}
+Po provedení předchozích kroků provede systém konverzi extraktovaného textu do digitalizovaného souboru, a to v závislosti na nastavených požadavcích.
+
+\subsubsection{databáze PostgreSQL}
+V rámci ukládání je nutné využít databázi, v případě této práce byla zvolena PostgreSQL.
+PostgreSQL je \textit{open-source} objektově relační databáze, která je aktivně vyvíjená více jak 35 let.
+Tato databáze je proslulá svojí spolehnovistí, rozsáhlou funkcionalitou a výkonem.
+Dalším faktorem volby této databáze je jednoduchost nasazení za použítí \textit{Docker containeru} a rozsáhlá dokumentace pro případné řešení problémů.\cite{postgre}
+
+\subsection{Představa výsledného řešení}
+V předchozím textu již byly identifikovány hlavní kroky nutné pro vyřešení stanoveného problému této práce.
+Prvním krokem je převést ručně psaný text ve slovníkové podobě, tedy \textit{španělské slovo} - \textit{český význam}, do digitální podoby za pomoci \ac{OCR}.
+Dalším krokem je uložení takto získané digitální podoby slovníkového záznamu do databázového systému, specificky PostgreSQL.\cite{postgre}
+Pokud tento záznam již existuje, je nutné změnit jeho prioritu naučení.
+Tento záznam jsme se v minulosti nenaučili a je nutné věnovat mu větší pozornost.
+
+
 \subsection{ROZSAH}
 Rozsahem je minimálně 1 strana a max. 2 strany.
 
 
-
-
 \section{IMPLEMENTATION / IMPLEMENTACE ŘEŠENÍ}
+
+\subsection{Popis řešení}
+jak k tomu budu přistupovat
+co jsem dělal
+jak jsem to dělal
+
+
+\subsubsection{Tesseract}
+hlavní
+
+\subsubsection{EasyOCR}
+hlavní
+
+\subsubsection{Pen to Print}
+kontrola
+
+\subsection{Omezení/nevytvořitelnost}
+proč to nejde
+kde to selhává
+
+
 \subsection{OBSAH}
 Tato kapitola by měla pojednávat o praktické implementaci nového řešení. Tedy jak dojít od teorie k implementaci a jak jsme to řešili my (vy).
 \subsection{ROZSAH}
@@ -189,6 +253,11 @@ Rozsah je min. 1 strana, maximálně 2 strany.
 
 
 \section{TESTING OF DEVELOPED APPLICATION / TESTOVÁNÍ VYVINUTÉ APLIKACE - ŘEŠENÍ}
+
+\subsection{testování možností}
+
+\subsection{výstupy a jejich porovnání}
+
 \subsection{OBSAH}
 Zde musí být definice, jak bude testováno a co má být přesně výsledkem.
 Vlastní testování a výsledky formou tabulek budou v podkapitole
@@ -199,11 +268,18 @@ Rozsah je 1strana. \ac{SSIM}
 
 
 \section{CONCLUSIONS / ZÁVĚRY}
+\subsection{závěr}
+nejde to
+proč to nejde
+shrnutí omezení metodiky
+návrh sledovat problematiku
+návrh vytvořit učící model na psané písmo pokud se tomu dají větší prostředky
+
 Tady už se vyjádřit jen k tomu, že se podařilo najít (definovat) nový přístup k řešení problému a že byl i prakticky ověřen na modelovém případě. 
 Dobré je také diskutovat využitelnost nového řešení jak v aktuální oblasti problému (nejlépe včetně finančních či časových úspor), tak i v dalších oblastech (alespoň nastínit).
+\subsection{ROZSAH}
 Rozsah závěru je minimálně 10 řádků, maximálně 20 řádků.\ac{MSE}\cite{einstein}
 
-\ac{SSIM}
 
 
 % seznam zdrojů
