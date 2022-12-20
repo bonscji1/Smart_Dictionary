@@ -253,24 +253,16 @@ Prvotní testování potvrdilo správnou funkčnost, složitější testování 
 \subsection{Omezení}
 Ani Tesseract ani EasyOCR nebyli schopni rozpoznávat ručně psaný text v dostatečně přesné podobě.
 Výstup těchto metodik byl pro toto řešení naprosto nepoužitelný a ani úprava specifických vlastností jednotlivých \ac{OCR} enginů nevedla k lepším výsledkům.
-Problémy nastaly také s Pen to Print implementací, kde první testovací obrázek s reálnými daty byl odmítnut \ac{API}
-
-co jsem dělal, proč to nejde
-proč to nejde
-kde to selhává
+Problémy nastaly také s Pen to Print implementací, kde první testovací obrázek s reálnými daty byl  \ac{API} odmítnut.
+Tento problém byl vyřešen úpravou obrázku aby byla zmenšena jeho velikost.
+Posléze byl takto upravený obrázek \ac{API} Pen to Print přijmut a vrátil výsledek, více v sekci Testování aplikace.
 
 \subsection{Opuštění dalších částí řešení}
-není nutné dělat další části řešení, pokud nefunguje ani první krok,
-více prozkoumat limitace prvního kroku
-
-
-\subsection{OBSAH}
-Tato kapitola by měla pojednávat o praktické implementaci nového řešení. Tedy jak dojít od teorie k implementaci a jak jsme to řešili my (vy).
-\subsection{ROZSAH}
-Rozsah je min. 1 strana, maximálně 2 strany.
-
-
-
+Nemožnost splnit první krok implementace vede k invalidaci základního úkolu nového řešení, zvýšení efektivnosti učení za využití poznatků moderní vědy o výhodách poznámek v ručně psané a digitální podobě.
+Nemá cenu pokračovat v tvorbě alších kroků dokud nebude vyřešen tento klíčový problém.
+Z tohoto důvodu se  sekce Testování aplikace bude věnovat testování limitů již dříve zmíněných řešení a jejich porovnáním.
+Závěry z tohoto testování mohou sloužit k upřesnění, jak vzdálená jsou jednotlivá řešení od úspěšné digitalizace ručně psaného textu.
+Tako tvdálenost je totiž také vzdálenost od možnosti vytvoření zde stanoveného nového řešení.
 
 
 \section{TESTING OF DEVELOPED APPLICATION / TESTOVÁNÍ VYVINUTÉ APLIKACE - ŘEŠENÍ}
@@ -290,16 +282,16 @@ Rozsah je 1strana. \ac{SSIM}
 
 \section{CONCLUSIONS / ZÁVĚRY}
 \subsection{závěr}
-nejde to
-proč to nejde
-shrnutí omezení metodiky
-návrh sledovat problematiku
-návrh vytvořit učící model na psané písmo pokud se tomu dají větší prostředky
-
-Tady už se vyjádřit jen k tomu, že se podařilo najít (definovat) nový přístup k řešení problému a že byl i prakticky ověřen na modelovém případě. 
-Dobré je také diskutovat využitelnost nového řešení jak v aktuální oblasti problému (nejlépe včetně finančních či časových úspor), tak i v dalších oblastech (alespoň nastínit).
-\subsection{ROZSAH}
-Rozsah závěru je minimálně 10 řádků, maximálně 20 řádků.\ac{MSE}\cite{einstein}
+Jak je z předchozího textu jasné, nepodařilo se vytvořit nový přístup k řešení problému.
+Hlavním uskalím je složitost digitalizace ručně psaného textu.
+Samotná digitalizace je složitá úloha, napomáhá však standartizace jednotlivých fontů písma.
+Pokud jednou naučíme rozeznávací mechanizmus určitý font rozeznávat, dále již nezáleží kdo daný font využívá, vždy je možné písmo rozpoznat.
+Psaný text je však jedinečný, ani stejný znak není stejným člověkem vždy napsán stejně.
+Složitost úlohy naučit rozeznávací algoritmus rozeznávat písmo i jen pro specifickou osobu je značná.
+Za předpokladu úspěšnosti je pak nutné zkoumat, jak úspěšný by byl již vytvořený systém pro další osoby.
+Z průzkumu trhu je vidět, že o tuto problematiku je zájem, bohužel množství prostředků které tento výzkum vyžaduje je značné, což dosti omezuje možnosti vstupu do tohoto výzkumu.
+Nelze tedy než konstatovat, že ještě nějaký čas potrvá než v této práci zkoumaný use-case bude připraven i pro běžné vývojáře.
+Naději dává prohlášení EasyOCR o budoucím rozšížení v tomto směru a také práce Google inženýrů na proprietárním Google vision.
 
 
 
