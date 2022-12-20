@@ -1,0 +1,183 @@
+/mnt/LinuxSpace/Work/UHK/navazujici_ai2-p/3_semestr/Smap/Smart_Dictionary/Code/venv/bin/python /mnt/LinuxSpace/Work/UHK/navazujici_ai2-p/3_semestr/Smap/Smart_Dictionary/Code/main.py
+CUDA not available - defaulting to CPU. Note: This module is much faster with a GPU.
+Default testing image
+
+Tesseract output:
+Blogs
+
+Tutorials
+
+Walkthroughs
+
+Guids
+
+
+----------******************************-------------
+EasyOCR output:
+['Tutorials', 'Walkthroughs', 'Guids', 'Blogs']
+----------******************************-------------
+CUDA not available - defaulting to CPU. Note: This module is much faster with a GPU.
+Default testing image 2
+
+Tesseract output:
+This is the first line of
+this text example.
+
+This is the second line
+of the same text.
+
+----------******************************-------------
+EasyOCR output:
+['This is the first line of', 'this text example:', 'This is the second line', 'of the same text.']
+----------******************************-------------
+CUDA not available - defaulting to CPU. Note: This module is much faster with a GPU.
+Default testing image 2 with 2 languages
+
+Tesseract output:
+This is the first line of
+this text example.
+
+This is the second line
+of the same text.
+
+----------******************************-------------
+EasyOCR output:
+['This is the first line of', 'this text example.', 'This is the second line', 'of the same text.']
+----------******************************-------------
+CUDA not available - defaulting to CPU. Note: This module is much faster with a GPU.
+Procedurally smaller text
+
+Tesseract output:
+A Quick Grown Fox Jumps Over The Lasy Dep 8123406700
+'A Quick Brown Fox Jumps Over The Lazy Dog 0123456789
+
+A Quick Brown Fox Jumps Over The Lazy Dog 0123456789
+
+A Quick Brown Fox Jumps Over The Lazy Dog 0123456789
+
+A Quick Brown Fox Jumps Over The Lazy Dog 0123456789
+
+A Quick Brown Fox Jumps Over The Lazy Dog 0123456789
+
+A Quick Brown Fox Jumps Over The Lazy Dog 0123456789
+
+A Quick Brown Fox Jumps Over The Lazy Dog 0123456789
+
+A Quick Brown Fox Jumps Over The Lazy Dog 0123456789
+
+A Quick Brown Fox Jumps Over The Lazy Dog 0123456789
+
+A Quick Brown Fox Jumps Over The Lazy Dog 0123456789
+
+A Quick Brown Fox Jumps Over The Lazy Dog 0123456789
+
+----------******************************-------------
+EasyOCR output:
+['Quick Browr', 'Fox Jumps Over The Lazv Dog 0123456789', 'Quick Brewan Fox', 'Junips Over Me Lazy', '0123456789', 'Quick Brown Fox Jumps Over The Lazy Dog 0123456789', 'Quick Brown Fox Jumps Over The Lazy', '0123456789', 'Quick Brown Fox Jumps Over The Lazy Dog 0123456789', 'Quick Brown Fox Jumps Over The Lazy', '0123456789', 'A Quick Brown Fox Jumps Over The Lazy Dog 0123456789', 'A Quick Brown Fox Jumps Over The Lazy', '0123456789', 'A Quick Brown Fox Jumps Over The Lazy', '0123456789', 'A Quick', 'Brown Fox Jumps Over The Lazy Dog 0123456789', 'A Quick Brown Fox Jumps Over The', '0123456789', 'A Quick Brown Fox Jumps Over The Lazy Dog 0123456789', 'Dog', 'Dog', 'Dog', 'Dog', 'Lazy', 'Dog']
+----------******************************-------------
+CUDA not available - defaulting to CPU. Note: This module is much faster with a GPU.
+small real data blurry
+
+Tesseract output:
+
+----------******************************-------------
+EasyOCR output:
+['abuel0', 'dědeč e k', 'ma rkoh', 'hnédá']
+----------******************************-------------
+CUDA not available - defaulting to CPU. Note: This module is much faster with a GPU.
+small real data
+
+Tesseract output:
+abveloa = ldecek
+Ma rroh - hhedúá
+
+
+----------******************************-------------
+EasyOCR output:
+['abue lo', 'dědeč ek', 'ma rk0h', 'h něd á']
+----------******************************-------------
+CUDA not available - defaulting to CPU. Note: This module is much faster with a GPU.
+small real data only 1 language
+
+Tesseract output:
+abveloa side K..
+ma trboh — hi
+
+
+----------******************************-------------
+EasyOCR output:
+['abue lo', 'dědeč ek', 'ma rk0h', 'h něd á']
+----------******************************-------------
+CUDA not available - defaulting to CPU. Note: This module is much faster with a GPU.
+Real data
+
+Tesseract output:
+“en - me tem - jmeho 7 A
+¿Qué tal — je“
+¿como te lla mas: E pes se „| mehujes ;
+oa apellidos - prijment de
+
+De dede exes-— gdkud- 45
+
+E ” vu m avda
+ cvál al aliadas
+
+1... (990 UE ko
+
+uu de „Tý Přijmení
+
+me A ve had) % e o delas (z a ské y
+Pu es - Tak IU” Pe púrkal .
+
+p Tah NA kh dake Ko
+
+J Sabemos — bi me
+
+- $-. — NENE e
+
+wa" |
+
+E m0 oko- 4
+E“ k u [5 0 — nepknv A
+
+----------******************************-------------
+EasyOCR output:
+['Ila + 0', 'j mt hv )', 'SQ', 'h e', 'Qvé +a/ 2', '~ j6 kje', '2', '( 0 M 0', 'te', 'Ila ma s? _ j a k', 'se', 'jne hvje5', '4 pt lidos', 'PFì jmewí_(2)', 'De', 'donde', 'eres', '6 Jkv d', 'is ;', 'cha', 'poshv c he )', 'Fa |s0', 'VarJa t', 'cvá|', 'es', 'tv', 'Ilndo', 'je', 'Přij"e "', 'ape', '( 0h 0', '~', 'ja k6', '6Qve', '2', '(6', 'dila 5', '20*054441', 'fak_(vycPévka]', 'aké', 'Sa be m o5', '~ks ze', 'E s (u', 'heprav Ja', 'PravJa', 'jake', '#ví', 'ha (8s', 'Pves', 'tam b12 4', 'Ýíme', 'Pie /']
+----------******************************-------------
+CUDA not available - defaulting to CPU. Note: This module is much faster with a GPU.
+Real data adjusted for smaller image size
+
+Tesseract output:
+I
+jme E 2) UTA A
+¿Qué + R Jer je tl
+
+come he er mo se | mehujes $
+
+| apellidos » přijmení (2) "E
+
+De dede eres — dk VETE MIER
+ESCU cha — E en ER
+Falso — tebfavdas = Biaio:>|
+Verdat — pravda
+FE
+
+jaké je tvé přijmehé
+
+E... E ako
+
+r vé há az: a Co dels [2048 5er]
+Pues < TM (uy cpivka|
+abia — také ;
+a d
+Sabemos — Wíme
+
+piel —- kize —
+
+
+----------******************************-------------
+EasyOCR output:
+['5€', 'h €', 'Ila + v', 'j m t hv )', '( Qvé', '2', 'j6 kj e', '2', '& c c I €', 'te', 'Ila ma s ? _ j a k', '5e', 'J ne hvje', '4 pe llidos', 'PFìjmení (2)', 'De', 'doh Je', 'eres', '6 Jkv d', "15 '", 'E s(v cha', 'poslv che )', '~', 'Fa |sc', '  ; ~', 'Verja +', 'es', 'je #ví', 'Pvi) ne', 'h,', 'cvá|', '0 tu', '( 0hn 0', 'jako', 'GQve', '2', '(6', 'da|a 5', '2440546841', 'Pves', 'tak_ (vy- Pévka |', ' ', 'fam 61 4', 'fa k é', '5a be mos', 'Wíme', "' . ;", '-k; z e', '+a /', 'hepra v Jú', 'PrevJ', 'jaké', 'apeIlido', 'ha (es', 'Pie /']
+----------******************************-------------
+
+Process finished with exit code 0

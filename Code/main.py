@@ -129,7 +129,7 @@ def comparative_testing():
     # ******************************************************************
 
     # set testing image 2 -> second testing image
-    img = cv2.imread('Images/Test.jpg')
+    img = cv2.imread('Images/test_1.png')
 
     # set testing configurations
     config_tes = '-l eng --oem 1 --psm 3'
@@ -145,7 +145,7 @@ def comparative_testing():
     # ******************************************************************
 
     # set testing image 2 -> second testing image with added language
-    img = cv2.imread('Images/Test.jpg')
+    img = cv2.imread('Images/test_1.png')
 
     # set testing configurations
     config_tes = '-l spa+eng --oem 1 --psm 3'
@@ -161,7 +161,7 @@ def comparative_testing():
     # ******************************************************************
 
     # set testing image 3 -> testing for procedurally smaller text
-    img = cv2.imread('Images/Test.jpg')
+    img = cv2.imread('Images/test_2.png')
 
     # set testing configurations
     config_tes = '-l eng --oem 1 --psm 3'
