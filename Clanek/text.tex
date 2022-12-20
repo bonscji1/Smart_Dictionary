@@ -45,7 +45,7 @@ sorting=none
 
 
 
-\title{Název vašeho projektu - článku}
+\title{Smart Dictionary}
 
 
 \author{Bc. Jiří Bönsch
@@ -258,16 +258,144 @@ Tako tvdálenost je totiž také vzdálenost od možnosti vytvoření zde stanov
 \section{TESTING OF DEVELOPED APPLICATION / TESTOVÁNÍ VYVINUTÉ APLIKACE - ŘEŠENÍ}
 
 \subsection{testování možností}
+Jak již bylo zmíněno, nevé řešení nebylo možno vytvořit.
+Hlavním problémem je nedostatečná přesnost používaných technologií.
+Bližšímu testování a porovnání s komerčním řešením je věnována právě tato kapitola textu.
+Z důvodů omezení velikosti tetu zde nebudou představeny všechny testované zcénáře ale pouze 3 hlavní.
+Těmu jsou základní testovací obrázek, skutečná data a testovací úryvek dat.
 
-\subsection{výstupy a jejich porovnání}
+\subsection{výstup pro testovací obrázek}
 
-\subsection{OBSAH}
-Zde musí být definice, jak bude testováno a co má být přesně výsledkem.
-Vlastní testování a výsledky formou tabulek budou v podkapitole
-Zhodnocení výsledků testování je nejlépe slovně (zhodnocení předchozích tabulek) a pak jedna tabulka s přehledem řešení od jiných autorů s tím novým řešením (mělo by se ukázat, že to nové řešení je nejlepší)
-\subsection{ROZSAH}
-Rozsah je 1strana.
+\begin{figure}
 
+\begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Test.jpg}
+        \caption{Vstup}
+        \label{fig:Test}
+\end{subfigure}
+
+\begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Tesseract_Test.png}
+        \caption{Výstup Tesseract}
+        \label{fig:Tesseract_Test}
+\end{subfigure}
+
+\begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/easyOCR_Test.png}
+        \caption{Výstup EasyOCR}
+        \label{fig:easyOCR_Test}
+\end{subfigure}
+
+\begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/penToPrint_Test.png}
+        \caption{Výstup Pen to Print}
+        \label{fig:penToPrint_Test}
+\end{subfigure}
+\caption{Základní testovací obrázek}
+
+\end{figure}
+
+\paragraph{Vysvětlení obrázku 1}
+Z obrázku 1 je jasné, že všechna řešení byla schopna extrahovat text ze vstupního testovacího obrázku (a), je však vidět, že výstupy se od sebe značně liší a u EasyOCR také došlo k přehození slov. Nic z toho však nevzbuzovalo dojem, že nemá cenu pokračovat.
+
+
+\subsection{výstupy pro reálná data}
+
+\begin{figure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/page1.jpg}
+        \caption{Vstup Reálná data}
+        \label{fig:Test}
+\end{figure}
+
+
+\begin{figure}
+
+\begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Tesseract_Page1.png}
+        \caption{Výstup Tesseract}
+        \label{fig:Tesseract_Test}
+\end{subfigure}
+
+\begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/easyOCR_Page1.png}
+        \caption{Výstup EasyOCR}
+        \label{fig:easyOCR_Test}
+\end{subfigure}
+
+\begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/penToPrint_RealDataAdjusted.png}
+        \caption{Výstup Pen to Print}
+        \label{fig:penToPrint_Test}
+\end{subfigure}
+\caption{Reálná data}
+
+\end{figure}
+
+\paragraph{Vysvětlení obrázku 2}
+Obrázek 2 ukazuje reálný use-case, 1 stránku ze zápisků ve slovníku.
+Je zde vidět klasický formát \textit{španělské slovo} - \textit{české slovo}.
+Také jsou vidět klasické chyby, které mohou při zapisování slov nastat, za účelem zjištění, jak na ně budou jednotlivá \ac{OCR} řešení reagovat.
+
+\paragraph{Vysvětlení obrázku 3}
+Obrázek 3 ukazuje výstup z jednotlivých řešení.
+Je nutné poznamenat, že výstup z EasyOCR byl upraven, původní výstup je jeden dlouhý řádek, pro účely tohoto textu byl řádek rozdělen.
+již na první pohled je jasné, že výstup z Tesseractu ani EasyOCR není použitelný.
+Ani zdaleka se tento výstup nepodobá vstupním datům, objevují se dokonce znaky které v původním textu ani neexistují.
+Komerční Pen to print si poradil podstatně lépe, ale až se zmenšeným obrázkem, původní byl na \ac{API} moc velký.
+Pro srovnání byl tento upravený obrázek poskytnut i ostatním řešením, nevedlo to však k očividné změně.
+Pokud se na Pen to Print výstup podíváme z blízka, je i zde možné najít hned několik odlišností od vstupního textu.
+Zdá se, že problémy dělali především pomlčky a vázání sešitu.
+
+\subsection{výstup pro testovací úryvek dat}
+
+\begin{figure}
+
+\begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/pageSnippet.jpg}
+        \caption{Vstup}
+        \label{fig:Test}
+\end{subfigure}
+
+\begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Tesseract_PageSnippet.png}
+        \caption{Výstup Tesseract}
+        \label{fig:Tesseract_Test}
+\end{subfigure}
+
+\begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/easyOCR_PageSnippet.png}
+        \caption{Výstup EasyOCR}
+        \label{fig:easyOCR_Test}
+\end{subfigure}
+
+\begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/penToPrint_PageSnippet.png}
+        \caption{Výstup Pen to Print}
+        \label{fig:penToPrint_Test}
+\end{subfigure}
+\caption{Malý úryvek reálných dat}
+
+\end{figure}
+
+\paragraph{Vysvětlení obrázku 4}
+Na obrázku 4 můžeme vidět mezistádium mezi předchozími testy.
+Nachází se zde velice jednoduchá skutečná data v požadovaném formátu.
+Ani zde však není možné považovat jakékoli řešení za ideální.
+Řešení využívající Tesseract vytvyřilo nová slova, který se neschodují se slovy na vstupu.
+EasyOCR řešení, při pominutí mezer navíc, správně digitalizovalo první slovo,  drohé je však k nerozeznání.
+V komerčním řešení Pen to Print opět chybí pomlčny, jinak je však nejblíže požadovanému výstupu.
 
 
 \section{CONCLUSIONS / ZÁVĚRY}
