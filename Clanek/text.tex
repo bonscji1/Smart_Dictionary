@@ -238,12 +238,23 @@ Dalším milníkem tohoto projektu je, dle oficiální github stránky, zpracov�
 
 \subsubsection{Pen to Print}
 Pen to print je komerční řešení postavené zcela na myšlence převodu ručně psaného textu do digitální verze.
-funguje nejen jako online aplikace, ale také jako aplikace v mobilu a také jako api, neboli forma vhodná pro tuto práci.
+funguje nejen jako online aplikace, ale také jako aplikace v mobilu a také jako \ac{API}, neboli forma vhodná pro tuto práci.
 Bohužel nelze využít jako základ nového řešení z důvodu omezení která jsou kladena na \textit{freemium} verzi této služby.
-V nejzákladnější verzi je možné vytvářet pouze 100 dotazů na api za měsíc, což je značně omezené, větší limit je však kladen na velikost obrázků, které lze do api posílat. Například běžně vyfocený obrázek mobilem o velikosti 5.2 Mb již byl pro tuto aplikaci příliš velký.
+V nejzákladnější verzi je možné vytvářet pouze 100 dotazů na \ac{API} za měsíc, což je značně omezené, větší limit je však kladen na velikost obrázků, které lze do \ac{API} posílat.
+Například běžně vyfocený obrázek mobilem o velikosti 5.2 Mb již byl pro tuto aplikaci příliš velký.
 Toto řešení bude tedy bráno pouze jako kontrola ostatních řešení a jako baseline, kterého se snažíme dosáhnout.
+%
+\subsection{Realizace rešení}
+Prvním krokem implementace bylo zprovoznit výše zmíněné technologie.
+Pro dosažení tohoto cíle je využíván programovací jazyk python, Pycharm \ac{IDE} a Pip package manager.
+Specifické instrukce je možné najít v github repozitáři tohoto projektu v \textit{Readme}.
+Prvotní testování potvrdilo správnou funkčnost, složitější testování však odhalilo nenapravitelnou nedokonalost tohoto přístupu.
 
-\subsection{Omezení/nevytvořitelnost}
+\subsection{Omezení}
+Ani Tesseract ani EasyOCR nebyli schopni rozpoznávat ručně psaný text v dostatečně přesné podobě.
+Výstup těchto metodik byl pro toto řešení naprosto nepoužitelný a ani úprava specifických vlastností jednotlivých \ac{OCR} enginů nevedla k lepším výsledkům.
+Problémy nastaly také s Pen to Print implementací, kde první testovací obrázek s reálnými daty byl odmítnut \ac{API}
+
 co jsem dělal, proč to nejde
 proč to nejde
 kde to selhává
