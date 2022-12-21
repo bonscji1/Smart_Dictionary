@@ -69,8 +69,10 @@ sorting=none
 % in the abstract or keywords.
 \begin{abstract}
         Tento článek se zabývá problematikou efektivity učení, specificky rozdíly mezi ručně psanými a digitálními poznámkami.
-        Tato problematika často vzniká při studování slovní zásoby cizího jazyka. Ručně psané poznámky si student lépe pamatuje, digitální poznámky jsou ale přístupnější a dovolují navíc využívání pomocných technik a moderní technologie. Tento článek navrhuje jako řešení digitalizaci ručně psané textu spojenou s využitím databáze pro ukládání učené látky.
-        Bohužel se ukazuje, že volně dostupné prostředky pro digitalizaci nejsou zatím dostatečně vyspělé, aby byly použitelné k tomuto účelu.
+        Tato problematika často vzniká při studiu slovní zásoby cizího jazyka.
+        Ručně psané poznámky si student lépe pamatuje, digitální poznámky jsou ale přístupnější a dovolují navíc využívání pomocných technik a moderní technologie.
+        Tento článek navrhuje jako řešení digitalizaci ručně psané textu spojenou s využitím databáze pro ukládání učené látky.
+        Bohužel se ukázalo, že volně dostupné prostředky pro digitalizaci nejsou zatím dostatečně vyspělé, aby bylo možné použít je tomuto účelu.
         Na závěr jsou ukázány porovnání 2 vybraných prostředků, Tesseract a EasyOCR, s testovacím komerčním řešením Pen to Print.
 \end{abstract}
 
@@ -86,44 +88,58 @@ Memory, Computer vision, Acquisition of knowledge, Educational psychology
 
 \section{INTRODUCTION/ÚVOD}
 
-\subsection{}
-Současná doba je spojená s pokrokem technologií.
-Technologie prolínají každou část lidského života, není tomu jinak ani v rámci studia.
-Elektronické pomůcky nahrazují stále více pomůcek klasických.
-Tužka je nahrazena elektronickým perem. Papír nahrazen tabletem.
+\subsection{Úvod}
+Současná doba je spojená s pokrokem technologie.
+Nové poznatky a technologie prolínají každou část lidského života, není tomu jinak ani v rámci studia.
+Elektronické pomůcky stále více nahrazují pomůcky klasické.
+Tužka je nahrazena elektronickým perem.
+Papír nahrazen tabletem.
 Podobná nahrazení jsou ve všech aspektech studia, je však nutné si položit otázku.
-Vede toto nahrazení  k lepším studijním výsledkům?
+Vede toto nahrazení k lepším studijním výsledkům?
 
-\subsection{}
+\subsection{První studie}
 Vědecké studie tuto skutečnost dlouhodobě zkoumají.
-Můžeme pozorovat velice jasné návaznosti, kdy pozdější studie upřesňuje výsledky starší studie, nebo starší studii doplňuje o novější aplikace technologie.
-Příkladem může být zaměřená na psaní poznámek v akademické prostředí\cite{mightier_pen}. Studie testuje, zda existuje významný rozdíl mezi zapisováním na notebooku a nebo na papír pomocí pera.
-Zajímavým výsledkem je zjištění, že psaní pomocí pera je pro zapamatování lepší nežli zapisování poznámek na notebooku.
-Hlavním důvodem je skutečnost, že psaní perem je pomalejší, a tak je zapisující nutný volit informace, které zapíše.
-Notebook naopak dovoluje doslovné zapisování výkladu.
-Zajímavé je, že ani za případu, kdy byl uživatel notebooku seznámen s nevýhodou jeho zapisovací strategie, nevedlo to k významné změně výsledků.
+Existují velice jasné návaznosti, kdy novější studie upřesňuje výsledky starších studií, tuto studii doplňují o novější aplikace technologie.
+Příkladem může být zaměření na psaní poznámek v akademické prostředí.\cite{mightier_pen}
+Studie testuje, zda existuje významný rozdíl mezi zapisováním poznámek na notebooku oproti zapisování poznámek na papír pomocí pera.
+Zkoumání vede k zajímavým výsledkům.
+Psaní pomocí pera je pro cíl zapamatování studované látky efektivnější nežli zapisování poznámek na notebooku.
+Hlavním důvodem je skutečnost, že psaní perem je pomalejší.
+To vede k nutnosti zvolit informace, které student zapíše.
+Notebook v tomto ohledu naopak dovoluje doslovné zapisování výkladu, kdy student nemusí již při psaní o studované látce více přemýšlet.
+Zájem může vzbudit i dodatečný výzkum, zaměřený na seznámení uživatelů notebooků s nevýhodami této zapisovací strategie.
+I když uživatelé znaly nevýhody, nevedlo to k významné změně strategie a výsledků.
 
-\subsection{}
-Velkou mezerou předchozí studie je existence digitálních per, jejichž dopad nebyl zkoumán.
-Existuje však novější studie, která se zabývá touto problematikou.
-Specificky studie zkoumá, zda využívání klasických per, digitálních a klávesnice vede k lepším výsledků při studiu jednotlivých slov
-\cite{advantage_of_handwriting}.
-Studie ukazuje, že i pro studování jednotlivých slov je stále nejlepší psaní perem, zajímavé jsou však rozdíly mezi perem digitálním a klasickým.
-U subjektů, kteří mají zkušenosti s digitálním perem, nebyl vidět značný rozdíl mezi typy pera.
-Je tedy možné, že rozdíly mezi typy pera u nezkušených uživatelů mohou být způsobené zvýšenou kognitivní zátěží způsobenou používáním nové pomůcky. To však nic nemění na faktu, že používání kteréhokoli pera bylo pro zapamatování slov výrazně lepší než pouze klávesnice.
+\subsection{Druhá studie}
+Velkou mezerou předchozí studie je existence digitálních per.
+V původní studii jejichž dopad nebyl zkoumán, existuje však novější studie, která se zabývá právě touto problematikou.
+Studie zkoumá, zda využívání klasických per, digitálních per nebo klávesnice vede k lepším výsledků při studiu jednotlivých slov.\cite{advantage_of_handwriting}
+Ukazuje se, že i pro studování jednotlivých slov je stále nejlepším řešením psaní perem.
+Zajímavé jsou zaznamenané rozdíly mezi perem digitálním a klasickým.
+U zkoumaných subjektů, kteří mají zkušenosti s digitálním perem, nebyl zaznamenán značný rozdíl mezi typy pera.
+Pouze u subjektů bez předchozích zkušeností se projevil statisticky významný rozdíl ve prospěch klasického pera.
+Je možné, že rozdíly mezi typy pera u nezkušených uživatelů mohou být způsobené zvýšenou kognitivní zátěží způsobenou používáním nové studijní pomůcky.
+Opět se potvrzuje fakt, že používání kteréhokoli pera bylo pro studium slov výrazně lepší než pouze zapisování s pomocí klávesnice.
 
-\subsection{}
-Předchozí sekce mohou vyvolávat dojem, že technologie není vhodná pro usnadnění studia dalšího jazyku. Základ tohoto dojmu je však postaven na velice specifické sféře mnohem složitějšího problému. Vědci si jsou této skutečnosti vědomi, můžeme se proto odkazovat na roky jejich bádání.
-Meta-analýza zkoumající více jak 30 studií na toto téma představuje rozsáhlejší pohled na problematiku studia více jazyků\cite{technology_vocab}. Analýza jasně ukazuje, že podpora studia využitím moderní technologie vedla k lepším výsledkům zkušebních testů. Nezáleží ani, zda byl test okamžitě po učení, nebo až s časovým odstupem, vždy je vidět jasná korelace lepších výsledků s používáním moderních technologii. Specificky zajímavé poznatky však vynikly při komparaci výsledků věkových skupin a také typu využívané technologie. Nejlepší výsledky přineslo využití moderních technologií u vysokoškolských studentů.
-Nelze však s jistotou říci, zda je tato skutečnost způsobena jejich schopností pracovat s moderními technologiemi nebo jejich znalostní bází anglického jazyka.
-Naopak u předškoláků a na prvním stupni základní školy nepřineslo využití moderních technologii značný přínos.
-Preference studia na mobilních telefonech je další zajímavý fakt, který je z této analýzy zřejmý.
-Za pomoci mobilního telefonu můžeme studovat kdekoli a to v porovnání se studiem na stolních počítačích ve třídě k vedlo k lepším výsledkům.
+\subsection{Třetí studie}
+Předcházející sekce mohou vyvolávat dojem nevhodnosti technologie pro usnadnění studia dalších jazyků.
+Základ tohoto dojmu je však postaven na velice specifické sféře mnohem složitějšího problému.
+Jako řešení je možné využít studie zabývající se celkovou problematikou.
+Meta-analýza zkoumající více jak 30 studií zkoumajících toto téma představuje rozsáhlejší pohled na problematiku studia více jazyků.\cite{technology_vocab} Analýza jasně ukazuje, že podpora studia využitím moderní technologie vedla k lepším výsledkům zkušebních testů.
+Nezáleží ani, zda byl test psán okamžitě po studiu, nebo až s časovým odstupem.
+Vždy je vidět jasná korelace lepších výsledků s používáním moderní technologie.
+Obzvláště zajímavé poznatky však vynikly při komparaci výsledků věkových skupin a také typu využívané technologie.
+Nejlepší výsledky přineslo využití moderních technologií u vysokoškolských studentů.
+Nelze s jistotou říci, zda je tato skutečnost způsobena jejich schopností pracovat s moderními technologiemi nebo jejich znalostní bází anglického jazyka.
+U předškoláků a na prvním stupni základních škol naopak využití moderních technologií nepřineslo značný přínos.
+Analýza také ukazuje jasnou preference studia látky na mobilních telefonech.
+Za pomoci mobilního telefonu je možné studovat kdekoli a to v porovnání se studiem na stolních počítačích ve třídě k vedlo k lepším výsledkům.
 
-\subsection{}
-Je zřejmé, že použití moderních technologií má smysl.
-Nelze však bezmyšlenkovitě vynucovat používání.
-Můžeme uvažovat o nutnost zaměřit nasazování moderních technologií pouze do specifických odvětví studia jazyků, kde povedou ke zvýšení efektivity.
+\subsection{Závěr studií}
+Použití moderních technologií má zcela jasně smysl.
+Nelze však bezmyšlenkovitě vynucovat jejich používání.
+Můžeme uvažovat o nutnost zaměřit nasazování moderních technologií pouze do specifických odvětví studia.
+Tento přístup by měl do budoucna vést ke zvýšení studijní efektivity.
 
 \section{PROBLEM DEFINITION/ DEFINICE PROBLÉMU}
 
