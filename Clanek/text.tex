@@ -262,44 +262,55 @@ Pro následné studium, například pomocí intervalové techniky, je také nutn
 
 \subsection{Popis Implementace}
 Pro implementaci \ac{OCR} byly vybrány 2 hlavní technologie, Tesseract\cite{tesseract} a EasyOCR\cite{easy_ocr}.
-Dále byla pro komparaci vybrána technologie digitalizace Pen to Print\cite{pen_to_print}.
-Tato technologie není na rozdíl od technologií Tesseract a EasyOCR využitelná pro praktické provedení řešení, je to však placená technologie specificky vyvinutá a prodávaná pro převod ručně psaného textu do digitální formy. Je tedy vhodná jako benchmark pro komparaci vytvořeného řešení.
+Dále byla pro komparaci vybrána komerční technologie digitalizace Pen to Print\cite{pen_to_print}.
+Tato technologie není na rozdíl od technologií Tesseract a EasyOCR využitelná pro praktické provedení řešení.
+Hlavním důvodem jsou omezení \ac{API} a \textit{freemium} verze.
+Technologie Pen to Print byla specificky vyvinuta pro převod ručně psaného textu do digitální formy.
+Z tohoto důvodu byla vybrána jako benchmark pro komparaci vytvořeného řešení.
 
 \subsubsection{Tesseract}
-Tessetact je \ac{OCR} řešení původně vyvíjené v Hewlett-packard laboratořích v roce 1985, později vydané jako \textit{open-source} v roce 2005 a dále jeho vývoj převzal Google od roku 2006.
+Tessetact je \ac{OCR} řešení původně vyvíjené v Hewlett-packard laboratořích v roce 1985, později vydané jako \textit{open-source} v roce 2005.
+Jeho další vývoj převzal roku 2006 Google.
 Je zřejmé, že toto řešení má bohatou historii a je možná nejznámější \ac{OCR} engine.
 V současné době je tento projekt ve verzi 5, v základní verzi podporuje více jak 100 jazyků, je schopný zpracovávat několik typů vstupních obrázků a díky své komunitě na něj existuje mnoho nástaveb pro specifická řešení.
-V této práci bude Tesseract využíván pomocí python obalení zvaného \textit{PyTesseract}.
+V této práci bude Tesseract využíván pomocí python implementace \textit{PyTesseract}.
 
 \subsubsection{EasyOCR}
-EasyOCR je \textit{open-source} python modul pro extrakci textu z obrázků, schopné zpracovat přirozený i zhuštěný text v dokumentech.
-EasyOCR v době psaní  podporuje přes 80 jazyků s cílem další expanze.
-Dalším milníkem tohoto projektu je, dle oficiální Github stránky, zpracování ručně psaného textu, v následujícím textu je popsána současná situace týkající se tohoto milníku.\cite{easy_ocr}
+EasyOCR je \textit{open-source} python modul pro extrakci textu z obrázků.
+Je schopný zpracovat přirozený i zhuštěný text v dokumentech.
+EasyOCR v době psaní podporuje přes 80 jazyků, s cílem toto číslo do budoucna ještě navýšit.
+Dalším milníkem tohoto projektu je, dle oficiální Github stránky, zpracování ručně psaného textu.
+V kapitole testování aplikace je popsána a znázorněna současná situace týkající se tohoto milníku.\cite{easy_ocr}
 
 \subsubsection{Pen to Print}
-Pen to Print je komerční řešení postavené zcela na myšlence převodu ručně psaného textu do digitální verze.
-funguje nejen jako online aplikace, ale také jako aplikace v mobilu a také jako \ac{API}, neboli forma vhodná pro tuto práci.
-Bohužel nelze využít jako základ nového řešení z důvodu omezení která jsou kladena na \textit{freemium} verzi této služby.
-V nejzákladnější verzi je možné vytvářet pouze 100 dotazů na \ac{API} za měsíc, což je značně omezené, větší limit je však kladen na velikost obrázků, které lze do \ac{API} posílat.
-Například běžně vyfocený obrázek mobilem o velikosti 5.2 MB již byl pro tuto aplikaci příliš velký.
-Toto řešení bude tedy bráno pouze jako kontrola ostatních řešení a jako baseline, kterého se snažíme dosáhnout.
+Pen to Print je komerční řešení postavené zcela na myšlence převodu ručně psaného textu do digitální podoby.
+Funguje nejen jako online aplikace, ale také jako aplikace v mobilu nebo jako \ac{API}.
+Bohužel nelze využít jako základ nového řešení z důvodu omezení, která jsou kladena na \textit{freemium} verzi této služby.
+V nejzákladnější verzi je možné vytvářet pouze 100 dotazů na \ac{API} za měsíc.
+Další limit je kladen na velikost obrázků, které lze pomocí \ac{API} zpracovat.
+Například běžně vyfocený obrázek mobilem o velikosti 5.2 MB již byl pro \ac{API} příliš velký.
+Toto řešení bude tedy bráno pouze jako kontrola ostatních řešení a baseline, které se snažíme dosáhnout.
 %
 \subsection{Realizace řešení}
-Prvním krokem implementace bylo zprovoznit výše zmíněné technologie.
+Prvním krokem implementace bylo nakonfigurovat a otestovat funkčnost vybraných řešení.
 Pro dosažení tohoto cíle je využíván programovací jazyk python, Pycharm \ac{IDE} a Pip package manager.
-Specifické instrukce je možné najít v github repozitáři tohoto projektu v \textit{Readme}.
-Prvotní testování potvrdilo správnou funkčnost, složitější testování však odhalilo nenapravitelnou nedokonalost tohoto přístupu.
+Specifické instrukce je možné najít v Github repozitáři tohoto projektu.
+Prvotní testování potvrdilo správnou funkčnost, složitější testování však odhalilo nenapravitelnou vadu tohoto přístupu.
 
 \subsection{Omezení}
-Ani Tesseract ani EasyOCR nebyli schopni rozpoznávat ručně psaný text v dostatečně přesné podobě.
-Výstup těchto metodik byl pro toto řešení naprosto nepoužitelný a ani úprava specifických vlastností jednotlivých \ac{OCR} metodik nevedla k lepším výsledkům.
-Problémy nastaly také s Pen to Print implementací, kde první testovací obrázek s reálnými daty byl  \ac{API} odmítnut.
-Tento problém byl vyřešen úpravou obrázku aby byla zmenšena jeho velikost.
-Posléze byl takto upravený obrázek \ac{API} Pen to Print přijmout a vrátil výsledek, více v sekci Testování aplikace.
+Tesseract ani EasyOCR nebyli schopni rozpoznávat ručně psaný text v dostatečně přesné podobě.
+Výstup těchto technologií byl pro toto řešení naprosto nepoužitelný.
+Ani úprava specifických vlastností jednotlivých \ac{OCR} technologií nevedla k lepším výsledkům.
+Problémy nastaly také s Pen to Print implementací.
+První testovací obrázek s reálnými daty byl \ac{API} odmítnut z důvodu velikosti.
+Tento problém byl vyřešen úpravou obrázku s cílem snížení jeho velikost.
+Posléze byl takto upravený obrázek \ac{API} Pen to Print přijat.
+Vrácený výsledek také není plně uspokojivý, více v kapitole Testování aplikace.
 
 \subsection{Opuštění dalších částí řešení}
-Nemožnost splnit první krok implementace vede ke kompletní invalidaci základního úkolu nového řešení, zvýšení efektivnosti učení za využití poznatků moderní vědy o výhodách poznámek v ručně psané a digitální podobě.
-Nemá cenu pokračovat v tvorbě dalších kroků dokud nebude vyřešen tento klíčový problém.
+Nemožnost splnit první krok implementace vede ke kompletní invalidaci základního úkolu nového řešení.
+Není možné uskutečnit zvýšení efektivnosti učení za využití poznatků moderní vědy o výhodách poznámek v ručně psané a digitální podobě bez funčního převodu psaného textu do digitální podoby.
+Není možné pokračovat v tvorbě dalších kroků dokud nebude vyřešen tento klíčový problém.
 Z tohoto důvodu se  sekce Testování aplikace bude věnovat testování limitů již dříve zmíněných řešení a jejich porovnáním.
 Závěry z tohoto testování mohou sloužit k upřesnění, jak vzdálená jsou jednotlivá řešení od úspěšné digitalizace ručně psaného textu.
 Tato vzdálenost je totiž také vzdálenost od možnosti vytvoření zde stanoveného nového řešení.
