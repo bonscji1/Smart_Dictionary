@@ -202,12 +202,16 @@ Existující řešení se nadále dají použít pouze pro inspiraci.
 
 \subsection{Teoretické zpracování problematiky}
 Jak již bylo zmíněno v předchozí sekci, průzkum tématiky zcela jasně vede k využití technologie \ac{OCR} pro digitalizaci textu.
-\ac{OCR} je proces který převádí obrázek, na kterém se nachází text, do textu zpracovatelného strojem.
-Hlavním využitím této technologie je digitalizace dokumentů pro další zpracování. V dnešní době je snadné vytvořit scan legálně platné smlouvy nebo vyúčtování, což je vhodné pro dlouhodobé skladování ať již z pohledu uchovatelnosti nebo minimalizace potřebného fyzického prostoru.
-Takto naskenované dokumenty se v budoucnu velmi těžko zpracovávají, proto je výhodné provézt převod do klasické textové podoby pokud s takovýmto dokumentem chceme v budoucnu nadále pracovat. Další výhodou je taky možnost vyhledávání v textu, která je stále rychlejší a přesnější než vyhledávání na obrázcích.\cite{amazon_ocr}
+\ac{OCR} je proces převádějící obrázek, na kterém se nachází text, do textu zpracovatelného strojem.
+Hlavním využitím této technologie je digitalizace dokumentů pro další zpracování.
+V dnešní době je snadné naskenováním vytvořit kopie smluv, vyúčtování nebo jiných dokumentů.
+To je vhodné pro dlouhodobé skladování, ať již z pohledu uchovatelnosti nebo minimalizace potřebného fyzického prostoru.
+Takto naskenované dokumenty se v budoucnu velmi těžko zpracovávají.
+Je výhodné provézt převod do klasické textové podoby za předpokladu, že s dokumentem chceme v budoucnu nadále pracovat.
+Další výhodou je možnost vyhledávání v textu, která je stále rychlejší a přesnější než vyhledávání v obrázcích nebo fyzických dokumentech.\cite{amazon_ocr}
 
 \subsubsection{metodika OCR}
-Ve většině případů můžeme ve zpracování dat pomocí \ac{OCR} identifikovat několik základních kroků.\cite{amazon_ocr}
+U procesu zpracování dat pomocí \ac{OCR} je možné identifikovat několik základních kroků.\cite{amazon_ocr}
 
 \begin{itemize}
  \item Zisk obrázku
@@ -217,35 +221,41 @@ Ve většině případů můžeme ve zpracování dat pomocí \ac{OCR} identifik
 \end{itemize}
 
 \paragraph{Zisk obrázku}
-Pro \ac{OCR} potřebujeme obrázek s rozeznatelným textem, který nejčastěji získáme vyfocením nebo lépe naskenováním požadovaných dat.
+Pro \ac{OCR} je potřeba připravit obrázek s rozeznatelným textem, který nejčastěji uživatel získá vyfocením nebo naskenováním požadovaných dat.
 
 \paragraph{Předzpracování}
 Obrázek si systém předzpracovaná z důvodu vyčištění a odstranění nejčastějších chyb obrazu.
-Tento krok je důležitý jelikož vede ke zvýšení přesnosti \ac{OCR}.
-Mezi nejčastější úkony předzpracování jsou změny náklonu, začišťování hran nebo vyčištění nežádoucích obrazců, boxů a linií.
+Tento krok je důležitý hlavně z důvodu zvýšení přesnosti \ac{OCR}.
+Mezi nejčastější úkony předzpracování jsou změny náklonu obrazu, začišťování hran nebo odfiltrování nežádoucích obrazců, boxů a linií.
 
 \paragraph{Rozpoznání textu}
-Samotný algoritmus \ac{OCR} může být 2 typů, \textit {Pattern matching} nebo \textit{Feature extraction}.
-\textit{Pattern matching} funguje izolováním jednotlivých charakterů textu a následným porovnáváním tohoto charakteru s vnitřní databází charakterů. Tento systém funguje pouze tehdy, pokud s požadovanou přesností dokáže k izolovanému charakteru najít ve vnitřní databázi skupinu, do které zapadá a tak určit, o který charakter se jedná.
+Samotný algoritmus \ac{OCR} může být kategorizován do 2 typů, \textit {Pattern matching} nebo \textit{Feature extraction}.
+\textit{Pattern matching} funguje izolováním jednotlivých charakterů textu a následným porovnáváním tohoto charakteru s vnitřní databází charakterů.
+Funkčnost je zaručena pouze tehdy, pokud s požadovanou přesností dokáže algoritmus k izolovanému charakteru najít ve vnitřní databázi skupinu, do které je zařazen.
+Skupina určuje, jak bude charakter ve výsledku vyhodnocen.
 
-\textit{Feature extraction} pokračuje v rozkládání izolovaných charakterů na jednotlivé linie a tahy daného charakteru. Dalším krokem tohoto postupu je opět komparace s interní databází pro nalezení nejbližší schody s interním charakterem, který je výsledkem klasifikace.
+\textit{Feature extraction} pokračuje v rozkládání izolovaných charakterů na jednotlivé linie a tahy daného charakteru.
+Dalším krokem tohoto postupu je opět komparace s interní databází.
+Cílem je nalezení nejbližší schody s interním charakterem, který je následně výsledkem klasifikace.
 
 \paragraph{Následné zpracování}
-Po provedení předchozích kroků provede systém konverzi extrahovaného textu do digitalizovaného souboru, a to v závislosti na nastavených požadavcích.
+Po provedení předchozích kroků může systém uskutečnit konverzi extrahovaného textu do digitálního souboru.
+Vsledek je ovlivněn v závislosti na nastavených požadavcích.
 
 \subsubsection{databáze PostgreSQL}
 V rámci ukládání je nutné využít databázi, v případě této práce byla zvolena PostgreSQL.
 PostgreSQL je \textit{open-source} objektově relační databáze, která je aktivně vyvíjená více jak 35 let.
 Tato databáze je proslulá svojí spolehlivostí, rozsáhlou funkcionalitou a výkonem.
-Dalším faktorem volby této databáze je jednoduchost nasazení za použití \textit{Docker containeru} a rozsáhlá dokumentace pro případné řešení problémů.\cite{postgre}
+Dalším faktorem volby této databáze je jednoduchost nasazení za použití \textit{Docker containeru}.
+Za zmínku stojí také rozsáhlá dokumentace pro případné řešení problémů.\cite{postgre}
 
 \subsection{Představa výsledného řešení}
-V předchozím textu již byly identifikovány hlavní kroky nutné pro vyřešení stanoveného problému této práce.
+V předchozím textu byly identifikovány hlavní kroky nutné pro vyřešení stanoveného problému této práce.
 Prvním krokem je převést ručně psaný text ve slovníkové podobě, tedy \textit{španělské slovo} - \textit{český význam}, do digitální podoby za pomoci \ac{OCR}.
-Dalším krokem je uložení takto získané digitální podoby slovníkového záznamu do databázového systému, specificky PostgreSQL.\cite{postgre}
+Dalším krokem je uložení takto získané digitální podoby slovníkového záznamu do databázového systému, specificky PostgreSQL.
 Pokud tento záznam již existuje, je nutné změnit jeho prioritu naučení.
-Tento záznam jsme se v minulosti nenaučili a je tedy nutné mu do budoucna věnovat větší pozornost při studiu.
-Pro následné studium, například pomocí intervalové techniky, je také dobré zachovávat datum, kdy byl záznam vytvořen.
+Tento záznam si v minulosti student nedokázal zapamatovat a je tedy nutné mu do budoucna věnovat větší pozornost při studiu.
+Pro následné studium, například pomocí intervalové techniky, je také nutné zachovávat datum, kdy byl záznam vytvořen nebo naposledy aktualizován.
 
 
 \section{IMPLEMENTATION / IMPLEMENTACE ŘEŠENÍ}
