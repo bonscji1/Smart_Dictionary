@@ -240,7 +240,7 @@ Cílem je nalezení nejbližší schody s interním charakterem, který je násl
 
 \paragraph{Následné zpracování}
 Po provedení předchozích kroků může systém uskutečnit konverzi extrahovaného textu do digitálního souboru.
-Vsledek je ovlivněn v závislosti na nastavených požadavcích.
+Výsledek je ovlivněn v závislosti na nastavených požadavcích.
 
 \subsubsection{databáze PostgreSQL}
 V rámci ukládání je nutné využít databázi, v případě této práce byla zvolena PostgreSQL.
@@ -309,7 +309,7 @@ Vrácený výsledek také není plně uspokojivý, více v kapitole Testování 
 
 \subsection{Opuštění dalších částí řešení}
 Nemožnost splnit první krok implementace vede ke kompletní invalidaci základního úkolu nového řešení.
-Není možné uskutečnit zvýšení efektivnosti učení za využití poznatků moderní vědy o výhodách poznámek v ručně psané a digitální podobě bez funčního převodu psaného textu do digitální podoby.
+Není možné uskutečnit zvýšení efektivnosti učení za využití poznatků moderní vědy o výhodách poznámek v ručně psané a digitální podobě bez funkčního převodu psaného textu do digitální podoby.
 Není možné pokračovat v tvorbě dalších kroků dokud nebude vyřešen tento klíčový problém.
 Z tohoto důvodu se  sekce Testování aplikace bude věnovat testování limitů již dříve zmíněných řešení a jejich porovnáním.
 Závěry z tohoto testování mohou sloužit k upřesnění, jak vzdálená jsou jednotlivá řešení od úspěšné digitalizace ručně psaného textu.
@@ -471,13 +471,18 @@ V komerčním řešení Pen to Print opět chybí pomlčky, jinak je však nejbl
 Jak je z předchozího textu jasné, nepodařilo se vytvořit nový přístup k řešení problému.
 Hlavním úskalím je složitost digitalizace ručně psaného textu.
 Samotná digitalizace je složitá úloha, napomáhá však standardizace jednotlivých fontů písma.
-Pokud jednou naučíme rozeznávací mechanizmus určitý font rozeznávat, dále již nezáleží kdo daný font využívá, vždy je možné písmo rozpoznat.
+Pokud jednou naučíme rozeznávací mechanizmus určitý font rozeznávat, dále již nezáleží, kdo daný font využívá.
+Vždy je možné písmo rozpoznat.
 Psaný text je však jedinečný, ani stejný znak není stejným člověkem vždy napsán stejně.
-Složitost úlohy naučit rozeznávací algoritmus rozeznávat písmo i jen pro specifickou osobu je značná.
+Složitost úlohy naučit rozeznávací algoritmus rozeznávat písmo, dokonce i jen jedné osoby, je značná.
 Za předpokladu úspěšnosti je pak nutné zkoumat, jak úspěšný by byl již vytvořený systém pro další osoby.
-Z průzkumu trhu je vidět, že o tuto problematiku je zájem, bohužel množství prostředků které tento výzkum vyžaduje je značné, což dosti omezuje možnosti vstupu do tohoto výzkumu.
-Nelze tedy než konstatovat, že ještě nějaký čas potrvá než v této práci zkoumaný use-case bude připraven i pro běžné vývojáře.
+Z průzkumu trhu je vidět, že o tuto problematiku je zájem.
+Bohužel množství prostředků, které tento výzkum vyžaduje je značné, což dosti omezuje možnosti vstupu k tomuto výzkumu.
+Nelze tedy než konstatovat, že ještě nějaký čas potrvá, než v této práci zkoumaný use-case bude připraven i pro běžné vývojáře.
 Naději dává prohlášení EasyOCR o budoucím rozšíření v tomto směru a také práce Google inženýrů na proprietárním Google vision.
+
+\subsection{Github repozitář}
+Repozitář Github pro tento text je možné nalézt zde: \textbf{https://github.com/bonscji1/Smart_Dictionary}
 
 
 
