@@ -322,8 +322,8 @@ Tato vzdálenost je totiž také vzdálenost od možnosti vytvoření zde stanov
 Jak již bylo zmíněno, nové řešení nebylo možno vytvořit.
 Hlavním problémem je nedostatečná přesnost používaných technologií.
 Bližšímu testování a porovnání s komerčním řešením je věnována právě tato kapitola textu.
-Z důvodů omezení velikosti tetu zde nebudou představeny všechny testované scénáře ale pouze 3 hlavní.
-Jsou to základní testovací obrázek, skutečná data a testovací úryvek dat.
+Z důvodů omezení velikosti textu zde nebudou představeny všechny testované scénáře ale pouze 3 hlavní.
+Jsou to scénáře pro základní testovací obrázek, skutečná data a testovací úryvek dat.
 
 \subsection{výstup pro testovací obrázek}
 
@@ -361,7 +361,10 @@ Jsou to základní testovací obrázek, skutečná data a testovací úryvek dat
 \end{figure}
 
 \paragraph{Vysvětlení obrázku 1}
-Z obrázku 1 je jasné, že všechna řešení byla schopna extrahovat text ze vstupního testovacího obrázku (a), je však vidět, že výstupy se od sebe značně liší a u EasyOCR také došlo k přehození slov. Nic z toho však nevzbuzovalo dojem, že nemá cenu pokračovat.
+Z obrázku 1 je jasné, že všechna řešení dokázala extrahovat text ze vstupního testovacího obrázku (a).
+Výstupy se od sebe ale značně liší.
+U EasyOCR dokonce došlo k přehození slov.
+Všechna řešení však digitalizovala text v dostatečné kvalitě pro pokračování implementace.
 
 
 \subsection{výstupy pro reálná data}
@@ -403,16 +406,18 @@ Z obrázku 1 je jasné, že všechna řešení byla schopna extrahovat text ze v
 \paragraph{Vysvětlení obrázku 2}
 Obrázek 2 ukazuje reálný use-case, 1 stránku ze zápisků ve slovníku.
 Je zde vidět klasický formát \textit{španělské slovo} - \textit{české slovo}.
-Také jsou vidět klasické chyby, které mohou při zapisování slov nastat, za účelem zjištění, jak na ně budou jednotlivá \ac{OCR} řešení reagovat.
+Také jsou vidět klasické chyby, které mohou při zapisování slov nastat.
+Ty existují za účelem zjištění, jak na ně budou jednotlivá \ac{OCR} řešení reagovat.
 
 \paragraph{Vysvětlení obrázku 3}
 Obrázek 3 ukazuje výstup z jednotlivých řešení.
 Je nutné poznamenat, že výstup z EasyOCR byl upraven, původní výstup je jeden dlouhý řádek, pro účely tohoto textu byl řádek rozdělen.
 již na první pohled je jasné, že výstup z Tesseractu ani EasyOCR není použitelný.
-Ani zdaleka se tento výstup nepodobá vstupním datům, objevují se dokonce znaky které v původním textu ani neexistují.
-Komerční Pen to Print si poradil podstatně lépe, ale až se zmenšeným obrázkem, původní byl na \ac{API} moc velký.
-Pro srovnání byl tento upravený obrázek poskytnut i ostatním řešením, nevedlo to však k očividné změně.
-Pokud se na Pen to Print výstup podíváme z blízka, je i zde možné najít hned několik odlišností od vstupního textu.
+Ani zdaleka se tento výstup nepodobá vstupním datům, objevují se dokonce znaky které v původním textu neexistují.
+Řešení Pen to Print si poradilo podstatně lépe, ale až se zmenšeným obrázkem.
+Původní byl na \ac{API} moc velký.
+Pro srovnatelnost byl tento upravený obrázek poskytnut i ostatním řešením, nevedlo to však k zaznamenatelné změně.
+Bližší pohled na Pen to Print výstup ukazuje, že i zde je možné najít hned několik odlišností od vstupního textu.
 Zdá se, že problémy dělali především pomlčky a vázání sešitu.
 
 \subsection{výstup pro testovací úryvek dat}
@@ -451,8 +456,9 @@ Zdá se, že problémy dělali především pomlčky a vázání sešitu.
 \end{figure}
 
 \paragraph{Vysvětlení obrázku 4}
-Na obrázku 4 můžeme vidět jistou kombinaci 2 předchozích testů.
-Nachází se zde velice jednoduchá skutečná data v požadovaném formátu, je to však pouze malé množství dat.
+Data na obrázku 4 jsou kombinací dat z 2 předchozích testů.
+Nachází se zde velice jednoduchá skutečná data v požadovaném formátu.
+Množství dat je však malé a nenachází se zde ani žádné rušivé elementy jako chyby nebo vazba sešitu.
 Cílem bylo testovat, zda alespoň takto jednoduchá data je možné správně zpracovat.
 Ani zde však není možné považovat jakékoli řešení za ideální.
 Řešení využívající Tesseract má na výstupu nová slova, která se jen vzdáleně podobají vstupnímu textu.
