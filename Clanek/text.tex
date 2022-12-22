@@ -52,9 +52,9 @@ sorting=none
         \linebreak
         Faculty of Informatics and Management
         \linebreak
-        University of Hradec Kralove,
+        University of Hradec Králové,
         \linebreak
-        Hradec Kralove, Czech Republic
+        Hradec Králové, Czech Republic
         \linebreak
         bonscji1@uhk.cz
 
@@ -243,7 +243,7 @@ Po provedení předchozích kroků může systém uskutečnit konverzi extrahova
 Výsledek je ovlivněn v závislosti na nastavených požadavcích.
 
 \subsubsection{databáze PostgreSQL}
-V rámci ukládání je nutné využít databázi, v případě této práce byla zvolena PostgreSQL.
+V rámci ukládání je nutné využít databázi, v případě této práce byla zvolena PostgreSQL\@.
 PostgreSQL je \textit{open-source} objektově relační databáze, která je aktivně vyvíjená více jak 35 let.
 Tato databáze je proslulá svojí spolehlivostí, rozsáhlou funkcionalitou a výkonem.
 Dalším faktorem volby této databáze je jednoduchost nasazení za použití \textit{Docker containeru}.
@@ -252,7 +252,7 @@ Za zmínku stojí také rozsáhlá dokumentace pro případné řešení problé
 \subsection{Představa výsledného řešení}
 V předchozím textu byly identifikovány hlavní kroky nutné pro vyřešení stanoveného problému této práce.
 Prvním krokem je převést ručně psaný text ve slovníkové podobě, tedy \textit{španělské slovo} - \textit{český význam}, do digitální podoby za pomoci \ac{OCR}.
-Dalším krokem je uložení takto získané digitální podoby slovníkového záznamu do databázového systému, specificky PostgreSQL.
+Dalším krokem je uložení takto získané digitální podoby slovníkového záznamu do databázového systému, specificky PostgreSQL\@.
 Pokud tento záznam již existuje, je nutné změnit jeho prioritu naučení.
 Tento záznam si v minulosti student nedokázal zapamatovat a je tedy nutné mu do budoucna věnovat větší pozornost při studiu.
 Pro následné studium, například pomocí intervalové techniky, je také nutné zachovávat datum, kdy byl záznam vytvořen nebo naposledy aktualizován.
@@ -373,7 +373,7 @@ Všechna řešení však digitalizovala text v dostatečné kvalitě pro pokrač
         \centering
         \includegraphics[width=\linewidth]{Images/page1.jpg}
         \caption{Vstup Reálná data}
-        \label{fig:Test}
+        \label{fig:page1}
 \end{figure}
 
 
@@ -383,21 +383,21 @@ Všechna řešení však digitalizovala text v dostatečné kvalitě pro pokrač
         \centering
         \includegraphics[width=\linewidth]{Images/Tesseract_Page1.png}
         \caption{Výstup Tesseract}
-        \label{fig:Tesseract_Test}
+        \label{fig:Tesseract_Page1}
 \end{subfigure}
 
 \begin{subfigure}{\linewidth}
         \centering
         \includegraphics[width=\linewidth]{Images/easyOCR_Page1.png}
         \caption{Výstup EasyOCR}
-        \label{fig:easyOCR_Test}
+        \label{fig:easyOCR_Page1}
 \end{subfigure}
 
 \begin{subfigure}{\linewidth}
         \centering
         \includegraphics[width=\linewidth]{Images/penToPrint_RealDataAdjusted.png}
         \caption{Výstup Pen to Print}
-        \label{fig:penToPrint_Test}
+        \label{fig:penToPrint_RalDataAdjusted}
 \end{subfigure}
 \caption{Reálná data}
 
@@ -428,28 +428,28 @@ Zdá se, že problémy dělali především pomlčky a vázání sešitu.
         \centering
         \includegraphics[width=\linewidth]{Images/pageSnippet.jpg}
         \caption{Vstup}
-        \label{fig:Test}
+        \label{fig:pageSnippet}
 \end{subfigure}
 
 \begin{subfigure}{\linewidth}
         \centering
         \includegraphics[width=\linewidth]{Images/Tesseract_PageSnippet.png}
         \caption{Výstup Tesseract}
-        \label{fig:Tesseract_Test}
+        \label{fig:Tesseract_PageSnippet}
 \end{subfigure}
 
 \begin{subfigure}{\linewidth}
         \centering
         \includegraphics[width=\linewidth]{Images/easyOCR_PageSnippet.png}
         \caption{Výstup EasyOCR}
-        \label{fig:easyOCR_Test}
+        \label{fig:easyOCR_PageSnippet}
 \end{subfigure}
 
 \begin{subfigure}{\linewidth}
         \centering
         \includegraphics[width=\linewidth]{Images/penToPrint_PageSnippet.png}
         \caption{Výstup Pen to Print}
-        \label{fig:penToPrint_Test}
+        \label{fig:penToPrint_PageSnippet}
 \end{subfigure}
 \caption{Malý úryvek reálných dat}
 
@@ -482,7 +482,7 @@ Nelze tedy než konstatovat, že ještě nějaký čas potrvá, než v této pr�
 Naději dává prohlášení EasyOCR o budoucím rozšíření v tomto směru a také práce Google inženýrů na proprietárním Google vision.
 
 \subsection{Github repozitář}
-Repozitář Github pro tento text je možné nalézt zde: \textbf{https://github.com/bonscji1/Smart_Dictionary}
+Repozitář Github pro tento text je možné nalézt zde: \textbf{https://github.com/bonscji1/Smart\_Dictionary}
 
 
 
