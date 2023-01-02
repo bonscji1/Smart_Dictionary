@@ -18,6 +18,7 @@
 \usepackage{hyperref}
 \usepackage{subcaption}
 \usepackage{acro}
+\usepackage{float}
 
 \include{acro}
 
@@ -72,7 +73,8 @@ sorting=none
         Tato problematika často vzniká při studiu slovní zásoby cizího jazyka.
         Ručně psané poznámky si student lépe pamatuje, digitální poznámky jsou ale přístupnější a dovolují navíc využívání pomocných technik a moderní technologie.
         Tento článek navrhuje jako řešení digitalizaci ručně psané textu spojenou s využitím databáze pro ukládání učené látky.
-        Bohužel se ukázalo, že volně dostupné prostředky pro digitalizaci nejsou zatím dostatečně vyspělé, aby bylo možné použít je tomuto účelu.
+        Bohužel se ukázalo, že volně dostupné prostředky pro digitalizaci nejsou dostatečně vyspělé.
+        Zatím s jejich použitím nebylo možné dosáhnout představeného cíle.
         Na závěr jsou ukázány porovnání 2 vybraných prostředků, Tesseract a EasyOCR, s testovacím komerčním řešením Pen to Print.
 \end{abstract}
 
@@ -86,7 +88,7 @@ Memory, Computer vision, Acquisition of knowledge, Educational psychology
 
 
 
-\section{INTRODUCTION/ÚVOD}
+\section{ÚVOD}
 
 \subsection{Úvod}
 Současná doba je spojená s pokrokem technologie.
@@ -99,7 +101,7 @@ Vede toto nahrazení k lepším studijním výsledkům?
 
 \subsection{První studie}
 Vědecké studie tuto skutečnost dlouhodobě zkoumají.
-Existují velice jasné návaznosti, kdy novější studie upřesňuje výsledky starších studií, tuto studii doplňují o novější aplikace technologie.
+Existují velice jasné návaznosti, kdy novější studie upřesňuje výsledky starších studií nebo doplňují starší studii o novější  technologie.
 Příkladem může být zaměření na psaní poznámek v akademické prostředí.\cite{mightier_pen}
 Studie testuje, zda existuje významný rozdíl mezi zapisováním poznámek na notebooku oproti zapisování poznámek na papír pomocí pera.
 Zkoumání vede k zajímavým výsledkům.
@@ -130,10 +132,10 @@ Nezáleží ani, zda byl test psán okamžitě po studiu, nebo až s časovým o
 Vždy je vidět jasná korelace lepších výsledků s používáním moderní technologie.
 Obzvláště zajímavé poznatky však vynikly při komparaci výsledků věkových skupin a také typu využívané technologie.
 Nejlepší výsledky přineslo využití moderních technologií u vysokoškolských studentů.
-Nelze s jistotou říci, zda je tato skutečnost způsobena jejich schopností pracovat s moderními technologiemi nebo jejich znalostní bází anglického jazyka.
+Nelze s jistotou říci, zda je tato skutečnost způsobena jejich schopností pracovat s moderními technologiemi nebo jejich znalostní bází anglického jazyka, který je v této studii testován.
 U předškoláků a na prvním stupni základních škol naopak využití moderních technologií nepřineslo značný přínos.
 Analýza také ukazuje jasnou preference studia látky na mobilních telefonech.
-Za pomoci mobilního telefonu je možné studovat kdekoli a to v porovnání se studiem na stolních počítačích ve třídě k vedlo k lepším výsledkům.
+Za pomoci mobilního telefonu je možné studovat kdekoli a to v porovnání se studiem na stolních počítačích ve třídě vedlo k lepším výsledkům.
 
 \subsection{Závěr studií}
 Použití moderních technologií má zcela jasně smysl.
@@ -141,7 +143,7 @@ Nelze však bezmyšlenkovitě vynucovat jejich používání.
 Můžeme uvažovat o nutnost zaměřit nasazování moderních technologií pouze do specifických odvětví studia.
 Tento přístup by měl do budoucna vést ke zvýšení studijní efektivity.
 
-\section{PROBLEM DEFINITION/ DEFINICE PROBLÉMU}
+\section{DEFINICE PROBLÉMU}
 
 \subsection{Problematika}
 Jak již bylo zmíněno, pro maximalizaci efektivity studia by bylo ideální využívat nejen výhody zapisování studované látky perem, ale i výhody digitální podoby materiálu.
@@ -155,28 +157,28 @@ Najít nebo vytvořit takové řešení, které umožňuje využívat tyto dvě 
 Tato práce není první, která se danou problematikou zabývá.
 Hlubší průzkum problematiky poukazuje na existenci již existujícího řešení v podobě digitalizace psaného textu.
 Je možné nalézt několik možností, jak digitalizace textu dosáhnout.
-Využívají Smart pera, smartphony nebo samostatné aplikace.
+Nejčastější je využití Smart pera, smartphonu nebo samostatné aplikace.
 Existence několika srovnatelných možností ale také poukazuje na neexistenci jednoho perfektního řešení.
 Neexistuje jedno řešení, které by bylo natolik lepší nežli ostatní a bylo by uživateli vždy preferováno.
 Ne každé existující řešení je vhodné pro každého uživatele, ať už se jedná o problematiku ceny, požadavků na fyzická zařízení nebo přesnost převodu či osobní principy.\cite{aarp_digitalization, popupalr_science_digitalization_with_pens}
 
 \paragraph{Smart pera}
 Prvním možným řešením jsou systémy využívající Smart pera.
-Systém využívá spolupracující 3 části, již zmíněné Smart pero, speciální tečkovaný blok a dedikovanou aplikaci.
+Systém využívá  3 propojené části, již zmíněné Smart pero, speciální tečkovaný blok a dedikovanou aplikaci.
 Smart pero je schopno klasicky zapisovat text.
 Při tomto zápisu snímá pohyby ruky a díky tečkovanému bloku je schopné přesně zaznamenávat umístění psaného textu na stránce.
 Všechna tato data jsou následně zaslána aplikaci, která vytváří přesnou digitální kopii psaného textu.
 Aplikace je také schopna ručně psanou digitální kopii převést do klasického formátu Microsoft Word.
 Hlavní výhodou tohoto řešení je značná přesnost.
 Nevýhodou je cena a specificita tohoto přístupu.
-Ne každý uživatel je však ochotný zaplatit požadované částky za takto specifický use-case.\cite{popupalr_science_digitalization_with_pens}
+Ne každý uživatel je ochotný zaplatit požadované peněžní částky za takto specifický use-case.\cite{popupalr_science_digitalization_with_pens}
 
 \paragraph{Smartphone}
 Dalším možným řešením je využití smartphonu, který v dnešní době vlastní značná část populace.
 Apple od verze iOS 15 zabudoval do operačního systému aplikaci Live Text, která uživateli umožňuje zvolit text na obrázku a poté zvolený text vykopírovat.
 Android tuto funkcionalitu v operačním systému zabudovanou nemá.
-Je možné vyřešit tento problém pomocí aplikace.
-Například aplikace Google Keep také umožňuje z obrázku extrahovat čistý text.\cite{aarp_digitalization, google_keep}
+Je však možné vyřešit tento problém pomocí specializované aplikace.
+Například aplikace Google Keep umožňuje z obrázku extrahovat čistý text, podobně jako aplikace Live Text.\cite{aarp_digitalization, google_keep}
 Výhodou využití smartphonu je dostupnost, nevýhodou může být přesnost nebo také složitější postup následného využití vykopírovaného textu.
 
 \paragraph{Další aplikace využívající OCR}
@@ -198,9 +200,9 @@ Nejen že neexistuje kontrola nad fungováním digitalizační aplikace, ale jak
 Z tohoto důvodu je nutné vytvořit nový způsob, kde budou tyto faktory pod kontrolou.
 Existující řešení se nadále dají použít pouze pro inspiraci.
 
-\section{NEW SOLUTION / NOVÉ ŘEŠENÍ}
+\section{NOVÉ ŘEŠENÍ}
 
-\subsection{Teoretické zpracování problematiky}
+\subsection{Technologie}
 Jak již bylo zmíněno v předchozí sekci, průzkum tématiky zcela jasně vede k využití technologie \ac{OCR} pro digitalizaci textu.
 \ac{OCR} je proces převádějící obrázek, na kterém se nachází text, do textu zpracovatelného strojem.
 Hlavním využitím této technologie je digitalizace dokumentů pro další zpracování.
@@ -210,7 +212,7 @@ Takto naskenované dokumenty se v budoucnu velmi těžko zpracovávají.
 Je výhodné provézt převod do klasické textové podoby za předpokladu, že s dokumentem chceme v budoucnu nadále pracovat.
 Další výhodou je možnost vyhledávání v textu, která je stále rychlejší a přesnější než vyhledávání v obrázcích nebo fyzických dokumentech.\cite{amazon_ocr}
 
-\subsubsection{metodika OCR}
+\subsubsection{Metodika OCR}
 U procesu zpracování dat pomocí \ac{OCR} je možné identifikovat několik základních kroků.\cite{amazon_ocr}
 
 \begin{itemize}
@@ -249,8 +251,10 @@ Tato databáze je proslulá svojí spolehlivostí, rozsáhlou funkcionalitou a v
 Dalším faktorem volby této databáze je jednoduchost nasazení za použití \textit{Docker containeru}.
 Za zmínku stojí také rozsáhlá dokumentace pro případné řešení problémů.\cite{postgre}
 
-\subsection{Představa výsledného řešení}
+\subsection{Teoretické zpracování problematiky}
 V předchozím textu byly identifikovány hlavní kroky nutné pro vyřešení stanoveného problému této práce.
+Posledním bodem nutným zmínit jsou data.
+Nové řešení bude tvořeno s využitím dat získaných ze studia španělštiny.
 Prvním krokem je převést ručně psaný text ve slovníkové podobě, tedy \textit{španělské slovo} - \textit{český význam}, do digitální podoby za pomoci \ac{OCR}.
 Dalším krokem je uložení takto získané digitální podoby slovníkového záznamu do databázového systému, specificky PostgreSQL\@.
 Pokud tento záznam již existuje, je nutné změnit jeho prioritu naučení.
@@ -258,32 +262,32 @@ Tento záznam si v minulosti student nedokázal zapamatovat a je tedy nutné mu 
 Pro následné studium, například pomocí intervalové techniky, je také nutné zachovávat datum, kdy byl záznam vytvořen nebo naposledy aktualizován.
 
 
-\section{IMPLEMENTATION / IMPLEMENTACE ŘEŠENÍ}
+\section{IMPLEMENTACE ŘEŠENÍ}
 
 \subsection{Popis Implementace}
 Pro implementaci \ac{OCR} byly vybrány 2 hlavní technologie, Tesseract\cite{tesseract} a EasyOCR\cite{easy_ocr}.
 Dále byla pro komparaci vybrána komerční technologie digitalizace Pen to Print\cite{pen_to_print}.
-Tato technologie není na rozdíl od technologií Tesseract a EasyOCR využitelná pro praktické provedení řešení.
+Tato technologie není na rozdíl od technologií Tesseract a EasyOCR využitelná pro praktické provedení nového řešení.
 Hlavním důvodem jsou omezení \ac{API} a \textit{freemium} verze.
 Technologie Pen to Print byla specificky vyvinuta pro převod ručně psaného textu do digitální formy.
 Z tohoto důvodu byla vybrána jako benchmark pro komparaci vytvořeného řešení.
 
 \subsubsection{Tesseract}
-Tessetact je \ac{OCR} řešení původně vyvíjené v Hewlett-packard laboratořích v roce 1985, později vydané jako \textit{open-source} v roce 2005.
+\ac{OCR} řešení původně vyvíjené v Hewlett-packard laboratořích v roce 1985, později vydané jako \textit{open-source} v roce 2005.
 Jeho další vývoj převzal roku 2006 Google.
 Je zřejmé, že toto řešení má bohatou historii a je možná nejznámější \ac{OCR} engine.
 V současné době je tento projekt ve verzi 5, v základní verzi podporuje více jak 100 jazyků, je schopný zpracovávat několik typů vstupních obrázků a díky své komunitě na něj existuje mnoho nástaveb pro specifická řešení.
 V této práci bude Tesseract využíván pomocí python implementace \textit{PyTesseract}.
 
 \subsubsection{EasyOCR}
-EasyOCR je \textit{open-source} python modul pro extrakci textu z obrázků.
+ \textit{Open-source} python modul pro extrakci textu z obrázků.
 Je schopný zpracovat přirozený i zhuštěný text v dokumentech.
 EasyOCR v době psaní podporuje přes 80 jazyků, s cílem toto číslo do budoucna ještě navýšit.
 Dalším milníkem tohoto projektu je, dle oficiální Github stránky, zpracování ručně psaného textu.
 V kapitole testování aplikace je popsána a znázorněna současná situace týkající se tohoto milníku.\cite{easy_ocr}
 
 \subsubsection{Pen to Print}
-Pen to Print je komerční řešení postavené zcela na myšlence převodu ručně psaného textu do digitální podoby.
+Komerční řešení postavené zcela na myšlence převodu ručně psaného textu do digitální podoby.
 Funguje nejen jako online aplikace, ale také jako aplikace v mobilu nebo jako \ac{API}.
 Bohužel nelze využít jako základ nového řešení z důvodu omezení, která jsou kladena na \textit{freemium} verzi této služby.
 V nejzákladnější verzi je možné vytvářet pouze 100 dotazů na \ac{API} za měsíc.
@@ -305,27 +309,18 @@ Problémy nastaly také s Pen to Print implementací.
 První testovací obrázek s reálnými daty byl \ac{API} odmítnut z důvodu velikosti.
 Tento problém byl vyřešen úpravou obrázku s cílem snížení jeho velikost.
 Posléze byl takto upravený obrázek \ac{API} Pen to Print přijat.
-Vrácený výsledek také není plně uspokojivý, více v kapitole Testování aplikace.
+Vrácený výsledek také není plně uspokojivý, více v sekci \textit{Testování aplikace}.
 
 \subsection{Opuštění dalších částí řešení}
 Nemožnost splnit první krok implementace vede ke kompletní invalidaci základního úkolu nového řešení.
 Není možné uskutečnit zvýšení efektivnosti učení za využití poznatků moderní vědy o výhodách poznámek v ručně psané a digitální podobě bez funkčního převodu psaného textu do digitální podoby.
 Není možné pokračovat v tvorbě dalších kroků dokud nebude vyřešen tento klíčový problém.
-Z tohoto důvodu se  sekce Testování aplikace bude věnovat testování limitů již dříve zmíněných řešení a jejich porovnáním.
+Z tohoto důvodu se  sekce \textit{Testování aplikace} bude věnovat testování limitů již dříve zmíněných řešení a jejich porovnáním.
 Závěry z tohoto testování mohou sloužit k upřesnění, jak vzdálená jsou jednotlivá řešení od úspěšné digitalizace ručně psaného textu.
 Tato vzdálenost je totiž také vzdálenost od možnosti vytvoření zde stanoveného nového řešení.
 
 
-\section{TESTING OF DEVELOPED APPLICATION / TESTOVÁNÍ VYVINUTÉ APLIKACE - ŘEŠENÍ}
-
-\subsection{testování možností}
-Jak již bylo zmíněno, nové řešení nebylo možno vytvořit.
-Hlavním problémem je nedostatečná přesnost používaných technologií.
-Bližšímu testování a porovnání s komerčním řešením je věnována právě tato kapitola textu.
-Z důvodů omezení velikosti textu zde nebudou představeny všechny testované scénáře ale pouze 3 hlavní.
-Jsou to scénáře pro základní testovací obrázek, skutečná data a testovací úryvek dat.
-
-\subsection{výstup pro testovací obrázek}
+\section{TESTOVÁNÍ VYVINUTÉ APLIKACE - ŘEŠENÍ}
 
 \begin{figure}
 
@@ -359,6 +354,15 @@ Jsou to scénáře pro základní testovací obrázek, skutečná data a testova
 \caption{Základní testovací obrázek}
 
 \end{figure}
+
+\subsection{testování možností}
+Jak již bylo zmíněno, nové řešení nebylo možno vytvořit.
+Hlavním problémem je nedostatečná přesnost používaných technologií.
+Bližšímu testování a porovnání s komerčním řešením je věnována právě tato kapitola textu.
+Z důvodů omezení velikosti textu zde nebudou představeny všechny testované scénáře ale pouze 3 hlavní.
+Jsou to scénáře pro základní testovací obrázek, skutečná data a testovací úryvek dat.
+
+\subsection{výstup pro testovací obrázek}
 
 \paragraph{Vysvětlení obrázku 1}
 Z obrázku 1 je jasné, že všechna řešení dokázala extrahovat text ze vstupního testovacího obrázku (a).
@@ -466,7 +470,7 @@ EasyOCR řešení, při pominutí mezer navíc, správně digitalizovalo první 
 V komerčním řešení Pen to Print opět chybí pomlčky, jinak je však nejblíže požadovanému výstupu.
 
 
-\section{CONCLUSIONS / ZÁVĚRY}
+\section{ZÁVĚRY}
 \subsection{závěr}
 Jak je z předchozího textu jasné, nepodařilo se vytvořit nový přístup k řešení problému.
 Hlavním úskalím je složitost digitalizace ručně psaného textu.
